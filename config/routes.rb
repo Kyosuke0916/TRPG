@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users, only: [:new, :create, :show, :edit, :update]
   get 'static_pages/home'
   get 'static_pages/help'
   get 'static_pages/about'
