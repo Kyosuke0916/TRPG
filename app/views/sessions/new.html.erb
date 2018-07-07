@@ -4,10 +4,10 @@
     <%= flash[:alert] %>
     <%= form_for(:session, :url => {:action => :create}) do |f| %>
 
-      <%= f.label :メールアドレスだよ！ %>
+      <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :パスワードだよ！ %>
+      <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.submit "ログインするのぜ！！！", class: "btn btn-primary" %>
