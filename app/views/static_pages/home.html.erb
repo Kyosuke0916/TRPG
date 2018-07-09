@@ -5,11 +5,11 @@
   <h2>
     ゆっくりしていっちぇね！
   </h2>
-
-  <%= link_to "ユーザーの作成なのぜ！!", "/users/new", class: "btn btn-lg btn-primary" %>
   <p>
     <% if  logged_in? %>
       <%= link_to "プロフィールにもどるよ！", "/users/show" %>
+      <% else%>
+      <%= link_to "ユーザーの作成なのぜ！!", "/users/new", class: "btn btn-lg btn-primary" %>
     <% end %>
   </p>
 </div>
