@@ -1,2 +1,118 @@
-<h1>Characters#new</h1>
-<p>Find me in app/views/characters/new.html.erb</p>
+
+<button type="button" value="all_button" name="all_button" id="all_button">
+  一括で降る
+</button>
+<table>
+  <tr>
+    <td>
+      能力
+    </td>
+    <td>
+      dice
+    </td>
+    <td>
+      能力値
+    </td>
+  </tr>
+  <tr>
+    <td>
+      STR
+    </td>
+    <td>
+      <%= button_to('3d6',characters_three_path, method: :get, id: :str_button, :remote=>true)   %>
+    </td>
+    <td>
+      <span id='str'></span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      con
+    </td>
+    <td>
+      <%= button_to('3d6',characters_three_path, method: :get, id: :con_button, :remote=>true)   %>
+    </td>
+    <td id="con">
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+      pow
+    </td>
+    <td>
+      <%= button_to('3d6',characters_three_path, method: :get, id: :pow_button, :remote=>true) %>
+    </td>
+    <td id="pow">
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+      dex
+    </td>
+    <td>
+      <%= button_to('3d6',characters_three_path, method: :get, id: :dex_button, :remote=>true) %>
+    </td>
+    <td id="dex">
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+      app
+    </td>
+    <td>
+      <%= button_to('3d6',characters_three_path, method: :get, id: :app_button, :remote=>true) %>
+    </td>
+    <td id="app">
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+      SIZ
+    </td>
+    <td>
+      <%= button_to('2d6+6',characters_two6_path, method: :get, id: :siz_button, :remote=>true) %>
+    </td>
+    <td id="siz">
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+      INT
+    </td>
+    <td>
+      <%= button_to('2d6+6',characters_two6_path, method: :get, id: :int_button, :remote=>true) %>
+    </td>
+    <td id="int">
+
+    </td>
+  <tr>
+    <td>
+      EDU
+    </td>
+    <td>
+      <%= button_to('3d6+3',characters_three3_path, method: :get, id: :edu_button, :remote=>true) %>
+    </td>
+    <td id="edu">
+
+    </td>
+  </tr>
+  </tr>
+</table>
+
+<%= form_for @character do |f| %>
+  <%= f.hidden_field :str%>
+  <%= f.hidden_field :con%>
+  <%= f.hidden_field :pow%>
+  <%= f.hidden_field :dex%>
+  <%= f.hidden_field :app%>
+  <%= f.hidden_field :siz%>
+  <%= f.hidden_field :int%>
+  <%= f.hidden_field :edu%>
+
+  <%= f.submit %>
+<% end %>
