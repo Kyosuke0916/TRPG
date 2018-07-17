@@ -14,6 +14,7 @@ class CharactersController < ApplicationController
   end
 
   def edit
+    @character=Character.all
   end
 
   def update
@@ -44,5 +45,10 @@ class CharactersController < ApplicationController
     result={}
     result["val"]=rand(1..6)+rand(1..6)+6
     render json:result
+  end
+
+  def skill_set
+    @character=Character.all
+    render :skill_set
   end
 end
