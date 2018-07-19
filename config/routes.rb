@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'characters/three'
   get 'characters/three3'
   get 'dices/hundred'
+  get 'dices/twenty'
   get 'characters/two6'
   resources :characters, only: [:new, :create, :destroy, :index, :show, :edit, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

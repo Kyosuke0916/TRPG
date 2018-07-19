@@ -1,0 +1,29 @@
+<div class="span6 dicerole_box">
+  <div class="span3">
+    <div class="well">
+      <h4><i class="icon-expand"></i> 1D100</h4>
+      <p>
+      <form id="dice1d100" name="dice1d100" class="form-inline">
+        <input type="button" class="btn" value="ダイスロール" onclick="ring(); getDice1();">
+        <label class="checkbox">
+          <input id="check" name="check" type="checkbox" checked> 判定
+        </label>
+      </form>
+      </p>
+      <p>
+      <span id="result" class="result"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="span3">
+    <div class="well">
+      <h4><i class="icon-expand"></i> 1D20</h4>
+      <p>
+<%= button_to('1d20',dices_twenty_path, method: :get, id: :twenty_button, :remote=>true) %>
+      </p>
+      <p id="twenty">
+      </p>
+    </div>
+  </div>
+</div>

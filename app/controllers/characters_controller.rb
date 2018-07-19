@@ -22,11 +22,7 @@ class CharactersController < ApplicationController
   def destroy
   end
 
-  def hundred
-    result={}
-    result["val"]=rand(1..100)
-    render json:result
-  end
+
 
   def three
     result={}
