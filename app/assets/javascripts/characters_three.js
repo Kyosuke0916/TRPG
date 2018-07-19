@@ -81,36 +81,6 @@ window.onload = function() {
         edu_dice();
         };
 
-    }
 
-window.onload=function(){
-    document.getElementById("twenty_button").onclick = function () {
-        requestAjax("http://localhost:3000/dices/twenty", function (response) {
-            document.getElementById("twenty").innerHTML = response.val
-        });
-    };
 
-    document.getElementById("hundred_button").onclick = function () {
-        requestAjax("http://localhost:3000/dices/hundred", function (response) {
-            document.getElementById("hundred").innerHTML = response.val
-        });
-    };
-
-    document.getElementById("ten_button").onclick = function () {
-        requestAjax("http://localhost:3000/dices/ten", function (response) {
-            document.getElementById("ten").innerHTML = response.val
-        });
-    };
-
-    document.getElementById("six_button").onclick = function () {
-        requestAjax("http://localhost:3000/dices/six", function (response) {
-            document.getElementById("six").innerHTML = response.val
-        });
-    };
-
-    document.getElementById("four_button").onclick = function () {
-        requestAjax("http://localhost:3000/dices/four", function (response) {
-            document.getElementById("four").innerHTML = response.val
-        });
-    };
-}
+};
