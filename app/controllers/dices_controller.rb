@@ -21,6 +21,12 @@ class DicesController < ApplicationController
     render json:result
   end
 
+  def six
+    result={}
+    result["val"]=rand(1..6)
+    render json:result
+  end
+
   def four
     result={}
     result["val"]=rand(1..4)

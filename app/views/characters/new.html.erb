@@ -103,7 +103,7 @@
   </tr>
 </table>
 
-<%= form_for @character do |f| %>
+<%= form_for @character, :url=>{:action => 'skill_set'} do |f| %>
   <%= f.hidden_field :str%>
   <%= f.hidden_field :con%>
   <%= f.hidden_field :pow%>
@@ -113,5 +113,5 @@
   <%= f.hidden_field :int%>
   <%= f.hidden_field :edu%>
 
-  <%= f.submit %>
+  <%= f.submit   %>
 <% end %>
