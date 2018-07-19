@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'dices/six'
   get 'dices/four'
   get 'characters/two6'
+  get 'dices/dice'
   post "/characters/skill_set" => "characters#skill_set"
   resources :characters, only: [:new, :create, :destroy, :index, :show, :edit, :update]
 

@@ -32,4 +32,12 @@ class DicesController < ApplicationController
     result["val"]=rand(1..4)
     render json:result
   end
+
+  def dice
+    result={}
+    params[:time].to_i.times do
+      result["val"] = result["val"].to_i + rand(1..params[:dice].to_i)
+    end
+    render json: result, status: 200
+  end
 end

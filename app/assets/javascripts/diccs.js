@@ -40,7 +40,13 @@ window.onload = function() {
 
     document.getElementById("four_button").onclick = function () {
         requestAjax("http://localhost:3000/dices/four", function (response) {
+            console.log(response.val)
             document.getElementById("four").innerHTML = response.val
         });
     };
 }
+    $('#freedom_button').on('ajax:success', function(event) {
+        console.dir(event)
+        document.getElementById("freedom").innerHTML=(event.detail[0].val)
+    });
+
