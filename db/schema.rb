@@ -26,13 +26,13 @@ ActiveRecord::Schema.define(version: 2018_07_26_175029) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.integer "c_id_id"
+    t.integer "character_id"
     t.string "name"
     t.integer "default"
     t.integer "sum"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["c_id_id"], name: "index_skills_on_c_id_id"
+    t.index ["character_id"], name: "index_skills_on_character_id"
   end
 
   create_table "users", force: :cascade do |t|

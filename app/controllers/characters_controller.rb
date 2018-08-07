@@ -44,7 +44,13 @@ class CharactersController < ApplicationController
   end
 
   def skill_set
-    @character=Character.all
+    @character = Character.new(character_status_params)
     render :skill_set
+  end
+
+  protected
+
+  def character_status_params
+    params.require(:character).permit(:str, :con, :pow, :dex, :app, :siz, :int, :edu)
   end
 end

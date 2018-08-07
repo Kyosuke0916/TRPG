@@ -7,58 +7,58 @@
       </tr>
       <tr>
         <td>能力値</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><%= @character.str %></td>
+        <td><%= @character.con %></td>
+        <td><%= @character.pow %></td>
+        <td><%= @character.dex %></td>
+        <td><%= @character.app %></td>
+        <td><%= @character.siz %></td>
+        <td><%= @character.int %></td>
+        <td><%= @character.edu %></td>
+        <td><%= ( @character.con + @character.siz ) /2 %></td>
+        <td><%= @character.pow %></td>
+        <td><%= @character.pow * 5 %></td>
+        <td><%= @character.int * 5 %></td>
+        <td><%= @character.pow * 5 %></td>
+        <td><%= @character.edu * 5 %></td>
       </tr>
       <tr>
         <td>その他増加分</td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
+        <td><input id="str_inc" type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
       </tr>
       <tr>
         <td>一時増減</td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
-        <td><input type="number" max="999"></td>
+        <td><input id="str_tmp" type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
+        <td><input type="number" max="99"></td>
       </tr>
       <tr>
         <td>現在値</td>
-        <td></td>
+        <td id="str_sum"><%= @character.str %></td>
         <td></td>
         <td></td>
         <td></td>
@@ -93,13 +93,13 @@
     <table border="1">
       <tr>
         <th>職業P</th>
-        <td>/</td>
-        <td>(うち追加分:<input type="number" max="999">)</td>
+        <td>/<%= @character.edu * 20 %></td>
+        <td>(うち追加分:<input type="number" max="99">)</td>
       </tr>
       <tr>
-        <th>職業P</th>
-        <td>/</td>
-        <td>(うち追加分:<input type="number" max="999">)</td>
+        <th>興味P</th>
+        <td>/<%= @character.int * 10 %></td>
+        <td>(うち追加分:<input type="number" max="99">)</td>
       </tr>
     </table>
   </div>
@@ -122,82 +122,82 @@
           <tr>
             <th>回避</th>
             <td>0</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
             <td></td>
           </tr>
           <tr>
             <th>キック</th>
             <td>２５</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
             <td></td>
           </tr>
           <tr>
             <th>組み付き</th>
             <td>２５</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
             <td></td>
           </tr>
           <tr>
             <th>こぶし</th>
             <td>50</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
             <td></td>
           </tr>
           <tr>
             <th>頭突き</th>
             <td>10</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
             <td></td>
           </tr>
           <tr>
             <th>投擲</th>
             <td>25</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
             <td></td>
           </tr>
           <tr>
             <th>マーシャルアーツ</th>
             <td>1</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
             <td></td>
           </tr>
           <tr>
             <th>拳銃</th>
             <td>20</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
             <td></td>
           </tr>
           <tr>
             <th>サブマシンガン</th>
             <td>15</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
+            <td><input type="number" max="99"></td>
             <td></td>
           </tr>
           <tr>
@@ -232,3 +232,4 @@
     <br>
     <input type="submit" value="保存">
   </div>
+<%= javascript_include_tag 'skill_change.js' %>

@@ -104,15 +104,15 @@
 </table>
 
 <%= form_for @character, :url=>{:action => 'skill_set'} do |f| %>
-  <%= f.hidden_field :str%>
-  <%= f.hidden_field :con%>
-  <%= f.hidden_field :pow%>
-  <%= f.hidden_field :dex%>
-  <%= f.hidden_field :app%>
-  <%= f.hidden_field :siz%>
-  <%= f.hidden_field :int%>
-  <%= f.hidden_field :edu%>
+  <%= f.hidden_field :str %>
+  <%= f.hidden_field :con %>
+  <%= f.hidden_field :pow %>
+  <%= f.hidden_field :dex %>
+  <%= f.hidden_field :app %>
+  <%= f.hidden_field :siz %>
+  <%= f.hidden_field :int %>
+  <%= f.hidden_field :edu %>
 
-  <%= f.submit   %>
+  <%= f.submit %>
 <% end %>
 <%= javascript_include_tag 'characters_three.js' %>
