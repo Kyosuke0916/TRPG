@@ -1,0 +1,76 @@
+<div class="span6 dicerole_box">
+  <div class="span3">
+    <div class="well">
+      <h4><i class="icon-expand"></i> 1D100</h4>
+      <p>
+        <%= button_to('ダイスロール',dices_hundred_path, method: :get, id: :hundred_button, :remote=>true) %>
+      </p>
+      <p id="hundred">
+      </p>
+    </div>
+  </div>
+
+  <div class="span3">
+    <div class="well">
+      <h4><i class="icon-expand"></i> 1D20</h4>
+      <p>
+<%= button_to('ダイスロール',dices_twenty_path, method: :get, id: :twenty_button, :remote=>true) %>
+      </p>
+      <p id="twenty">
+      </p>
+    </div>
+  </div>
+
+  <div class="span3">
+    <div class="well">
+      <h4><i class="icon-expand"></i> 1D10</h4>
+      <p>
+        <%= button_to('ダイスロール',dices_ten_path, method: :get, id: :ten_button, :remote=>true) %>
+      </p>
+      <p id="ten">
+      </p>
+    </div>
+  </div>
+
+  <div class="span3">
+    <div class="well">
+      <h4><i class="icon-expand"></i> 1D6</h4>
+      <p>
+        <%= button_to('ダイスロール',dices_six_path, method: :get, id: :six_button, :remote=>true) %>
+      </p>
+      <p id="six">
+      </p>
+    </div>
+  </div>
+
+  <div class="span3">
+    <div class="well">
+      <h4><i class="icon-expand"></i> 1D4</h4>
+      <p>
+        <%= button_to('ダイスロール',dices_four_path, method: :get, id: :four_button, :remote=>true) %>
+      </p>
+      <p id="four">
+      </p>
+    </div>
+  </div>
+
+  <div class="span3">
+    <div class="well">
+      <%= form_tag dices_dice_path, method: :get, remote: true, id: :freedom_button do %>
+      <%= select_tag 'time', options_for_select([["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5],
+                                                 ["6", 6], ["8", 8], ["10", 10], ["12", 12], ["15", 15],
+                                                 ["18", 18], ["24", 24]]) %>
+      <%= select_tag 'dice', options_for_select([["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6],
+                                                 ["7", 7], ["8", 8], ["9", 9], ["10", 10],["12", 12],
+                                                 ["20", 20],["100", 100]]) %>
+      <p>
+        <%= submit_tag('ダイスロール') %>
+      </p>
+        <% end %>
+      <p id="freedom">
+      </p>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'diccs.js' %>

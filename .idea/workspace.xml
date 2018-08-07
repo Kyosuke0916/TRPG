@@ -326,6 +326,7 @@
       </list>
     </option>
   </component>
+>>>>>>> 14efd3db43d134396973f518d78c44ac62ecdfc3
   <component name="RunManager" selected="Rails.Development: TRPG">
     <configuration name="Development: TRPG" type="RailsRunConfigurationType" factoryName="Rails">
       <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
@@ -429,6 +430,8 @@
       <item itemvalue="Rails.Development: TRPG" />
     </list>
   </component>
+<<<<<<< HEAD
+=======
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" />
   <component name="SvnConfiguration">
     <configuration />

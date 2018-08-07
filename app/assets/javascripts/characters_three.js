@@ -17,7 +17,6 @@
 window.onload = function() {
     str_dice = document.getElementById("str_button").onclick = function () {
         requestAjax("http://localhost:3000/characters/three", function (response) {
-            console.dir(response)
             document.getElementById("str").innerHTML = response.val
             document.getElementById("character_str").innerHTML = response.val
         });
@@ -81,5 +80,7 @@ window.onload = function() {
         int_dice();
         edu_dice();
         };
-    }
 
+
+
+};

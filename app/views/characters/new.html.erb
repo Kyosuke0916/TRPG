@@ -21,8 +21,7 @@
     <td>
       <%= button_to('3d6',characters_three_path, method: :get, id: :str_button, :remote=>true)   %>
     </td>
-    <td>
-      <span id='str'></span>
+    <td id="str">
     </td>
   </tr>
   <tr>
@@ -104,7 +103,7 @@
   </tr>
 </table>
 
-<%= form_for @character do |f| %>
+<%= form_for @character, :url=>{:action => 'skill_set'} do |f| %>
   <%= f.hidden_field :str%>
   <%= f.hidden_field :con%>
   <%= f.hidden_field :pow%>
@@ -114,5 +113,6 @@
   <%= f.hidden_field :int%>
   <%= f.hidden_field :edu%>
 
-  <%= f.submit %>
+  <%= f.submit   %>
 <% end %>
+<%= javascript_include_tag 'characters_three.js' %>
