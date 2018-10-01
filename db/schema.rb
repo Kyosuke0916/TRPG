@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 2018_07_26_175029) do
     t.integer "siz"
     t.integer "int"
     t.integer "edu"
+    t.integer "kick"
+    t.integer "avoid"
+    t.integer ""
   end
 
   create_table "skills", force: :cascade do |t|
