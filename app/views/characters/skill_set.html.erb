@@ -1,77 +1,77 @@
 <div class="main">
   <div class="status">
-    <table border="1">
+    <table id="status_table" border="1">
       <tr>
         <th width="100px"></th><th>STR</th><th>CON</th><th>POW</th><th>DEX</th><th>APP</th><th>SIZ</th><th>INT</th>
         <th>EDU</th><th>HP</th><th>MP</th><th>初期SAN</th><th>アイデア</th><th>幸運</th><th>知識</th>
       </tr>
       <tr>
         <td>能力値</td>
-        <td><%= @character.str %></td>
-        <td><%= @character.con %></td>
-        <td><%= @character.pow %></td>
-        <td><%= @character.dex %></td>
-        <td><%= @character.app %></td>
-        <td><%= @character.siz %></td>
-        <td><%= @character.int %></td>
-        <td><%= @character.edu %></td>
-        <td><%= ( @character.con + @character.siz ) /2 %></td>
-        <td><%= @character.pow %></td>
-        <td><%= @character.pow * 5 %></td>
-        <td><%= @character.int * 5 %></td>
-        <td><%= @character.pow * 5 %></td>
-        <td><%= @character.edu * 5 %></td>
+        <td id="str"><%= @character.str %></td>
+        <td id="con"><%= @character.con %></td>
+        <td id="pow"><%= @character.pow %></td>
+        <td id="dex"><%= @character.dex %></td>
+        <td id="app"><%= @character.app %></td>
+        <td id="siz"><%= @character.siz %></td>
+        <td id="int"><%= @character.int %></td>
+        <td id="edu"><%= @character.edu %></td>
+        <td id="hp"><%= ( @character.con + @character.siz ) /2 %></td>
+        <td id="mp"><%= @character.pow %></td>
+        <td id="san"><%= @character.pow * 5 %></td>
+        <td id="idea"><%= @character.int * 5 %></td>
+        <td id="luck"><%= @character.pow * 5 %></td>
+        <td id="know"><%= @character.edu * 5 %></td>
       </tr>
       <tr>
         <td>その他増加分</td>
         <td><input id="str_inc" type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
+        <td><input id="con_inc" type="number" max="99"></td>
+        <td><input id="pow_inc" type="number" max="99"></td>
+        <td><input id="dex_inc" type="number" max="99"></td>
+        <td><input id="app_inc" type="number" max="99"></td>
+        <td><input id="siz_inc" type="number" max="99"></td>
+        <td><input id="int_inc" type="number" max="99"></td>
+        <td><input id="edu_inc" type="number" max="99"></td>
+        <td><input id="hp_inc" type="number" max="99"></td>
+        <td><input id="mp_inc" type="number" max="99"></td>
+        <td><input id="san_inc" type="number" max="99"></td>
+        <td><input id="idea_inc" type="number" max="99"></td>
+        <td><input id="luck_inc" type="number" max="99"></td>
+        <td><input id="know_inc" type="number" max="99"></td>
       </tr>
       <tr>
         <td>一時増減</td>
         <td><input id="str_tmp" type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
-        <td><input type="number" max="99"></td>
+        <td><input id="con_tmp" type="number" max="99"></td>
+        <td><input id="pow_tmp" type="number" max="99"></td>
+        <td><input id="dex_tmp" type="number" max="99"></td>
+        <td><input id="app_tmp" type="number" max="99"></td>
+        <td><input id="siz_tmp" type="number" max="99"></td>
+        <td><input id="int_tmp" type="number" max="99"></td>
+        <td><input id="edu_tmp" type="number" max="99"></td>
+        <td><input id="hp_tmp" type="number" max="99"></td>
+        <td><input id="mp_tmp" type="number" max="99"></td>
+        <td><input id="san_tmp" type="number" max="99"></td>
+        <td><input id="idea_tmp" type="number" max="99"></td>
+        <td><input id="luck_tmp" type="number" max="99"></td>
+        <td><input id="know_tmp" type="number" max="99"></td>
       </tr>
       <tr>
         <td>現在値</td>
-        <td id="str_sum"><%= @character.str %></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="str_sum"></td>
+        <td id="con_sum"></td>
+        <td id="pow_sum"></td>
+        <td id="dex_sum"></td>
+        <td id="app_sum"></td>
+        <td id="siz_sum"></td>
+        <td id="int_sum"></td>
+        <td id="edu_sum"></td>
+        <td id="hp_sum"></td>
+        <td id="mp_sum"></td>
+        <td id="san_sum"></td>
+        <td id="idea_sum"></td>
+        <td id="luck_sum"></td>
+        <td id="know_sum"></td>
       </tr>
     </table>
   </div>
@@ -92,7 +92,7 @@
   <div class="point">
     <table border="1">
       <tr>
-        <th>職業P</th>
+      <th>職業P</th>
         <td>/<%= @character.edu * 20 %></td>
         <td>(うち追加分:<input type="number" max="99">)</td>
       </tr>
@@ -227,6 +227,7 @@
             <td></td>
             <td></td>
           </tr>
+
         </table>
     </div>
     <br>
