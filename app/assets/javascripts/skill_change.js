@@ -117,3 +117,66 @@ Object.keys(act).forEach(function(key) {
         });
     }
 }, act);
+
+var neg= {
+    iiku: ['iiku_ist','iiku_pro',1],
+    sinyou: ['sinyou_ist','sinyou_pro',2],
+    settoku: ['settoku_ist','settoku_pro',3],
+    negiri: ['negiri_ist','negiri_pro',4],
+    native: ['native_ist','native_pro',5],
+    first: ['first_ist','first_pro',6],
+    second: ['second_ist','second_pro',7],
+
+
+};
+
+Object.keys(neg).forEach(function(key) {
+    var val = this[key]; // this は obj
+    // console.log(key, val);
+    for(let i = 0; i < val.length; i++) {
+        let tmp = "#" + val[i]
+        $(tmp).change(function(){
+            console.log(tmp)
+            console.log($(tmp))
+            console.log(val[2])
+            document.getElementById("neg_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("neg_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+        });
+    }
+}, neg);
+
+var know= {
+    igaku: ['igaku_ist','igaku_pro',1],
+    okaruto: ['okaruto_ist','okaruto_pro',2],
+    kagaku: ['kagaku_ist','kagaku_pro',3],
+    coc: ['coc_ist','coc_pro',4],
+    art: ['art_ist','art_pro',5],
+    keiri: ['keiri_ist','keiri_pro',6],
+    kouko: ['kouko_ist','kouko_pro',7],
+    comp: ['comp_ist','comp_pro',8],
+    sinri: ['sinri_ist','sinri_pro',9],
+    human: ['human_ist','human_pro',10],
+    seibutu: ['seibutu_ist','seibutu_pro',11],
+    tisitu: ['tisitu_ist','tisitu_pro',12],
+    densi: ['densi_ist','densi_pro',13],
+    tenmon: ['tenmon_ist','tenmon_pro',14],
+    hakubutu: ['hakubutu_ist','hakubutu_pro',15],
+    buturi: ['buturi_ist','buturi_pro',16],
+    houritu: ['houritu_ist','houritu_pro',17],
+    yakugaku: ['yakugaku_ist','yakugaku_pro',18],
+    rekisi: ['rekisi_ist','rekisi_pro',19],
+
+};
+
+Object.keys(know).forEach(function(key) {
+    var val = this[key]; // this は obj
+    // console.log(key, val);
+    for(let i = 0; i < val.length; i++) {
+        let tmp = "#" + val[i]
+        $(tmp).change(function(){
+            console.log(tmp)
+            console.log($(tmp))
+            console.log(val[2])
+            document.getElementById("know_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("know_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+        });
+    }
+}, know);
