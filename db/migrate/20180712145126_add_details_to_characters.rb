@@ -8,5 +8,7 @@ class AddDetailsToCharacters < ActiveRecord::Migration[5.2]
     add_column :characters, :siz, :integer
     add_column :characters, :int, :integer
     add_column :characters, :edu, :integer
+    add_column :characters, :avoid, :integer
+    add_column :characters, :avoid, :integer
   end
 end
