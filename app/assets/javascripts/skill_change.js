@@ -59,7 +59,7 @@ Object.keys(buttle).forEach(function(key) {
     }
 }, buttle);
 
-var buttle= {
+var search= {
     oukyuu: ['oukyuu_ist','oukyuu_pro',1],
     kagi: ['kagi_ist','kagi_pro',2],
     kakusu: ['kakusu_ist','kakusu_pro',3],
@@ -75,7 +75,7 @@ var buttle= {
 
 };
 
-Object.keys(buttle).forEach(function(key) {
+Object.keys(search).forEach(function(key) {
     var val = this[key]; // this は obj
     // console.log(key, val);
     for(let i = 0; i < val.length; i++) {
@@ -84,7 +84,36 @@ Object.keys(buttle).forEach(function(key) {
             console.log(tmp)
             console.log($(tmp))
             console.log(val[2])
-            document.getElementById("buttle_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("buttle_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById("search_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("search_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
         });
     }
-}, buttle);
+}, search);
+
+var act= {
+    unten: ['unten_ist','unten_pro',1],
+    shuri: ['shuri_ist','shuri_pro',2],
+    sousa: ['sousa_ist','sousa_pro',3],
+    jyouba: ['jyouba_ist','jyouba_pro',4],
+    suiei: ['suiei_ist','suiei_pro',5],
+    seisaku: ['seisaku_ist','seisaku_pro',6],
+    soujyuu: ['soujyuu_ist','soujyuu_pro',7],
+    tyouyaku: ['tyouyaku_ist','tyouyaku_pro',8],
+    denki: ['denki_ist','denki_pro',9],
+    nabi: ['nabi_ist','nabi_pro',10],
+    hensou: ['hensou_ist','hensou_pro',11],
+
+};
+
+Object.keys(act).forEach(function(key) {
+    var val = this[key]; // this は obj
+    // console.log(key, val);
+    for(let i = 0; i < val.length; i++) {
+        let tmp = "#" + val[i]
+        $(tmp).change(function(){
+            console.log(tmp)
+            console.log($(tmp))
+            console.log(val[2])
+            document.getElementById("act_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("act_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+        });
+    }
+}, act);
