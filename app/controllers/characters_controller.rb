@@ -4,6 +4,13 @@ class CharactersController < ApplicationController
   end
 
   def create
+    @character=Character.new(character_skill_params)
+    @character.save
+    if @character.save
+      redirect_to @character
+    else
+      render :skill_set
+    end
   end
 
   def index
@@ -11,6 +18,7 @@ class CharactersController < ApplicationController
   end
 
   def show
+    @character=Character.find(params[:id])
   end
 
   def edit
@@ -22,6 +30,8 @@ class CharactersController < ApplicationController
 
   def destroy
   end
+
+
 
 
 
@@ -52,5 +62,9 @@ class CharactersController < ApplicationController
 
   def character_status_params
     params.require(:character).permit(:str, :con, :pow, :dex, :app, :siz, :int, :edu)
+  end
+
+  def character_skill_params
+    params.require(:character).permit(:str, :con, :pow, :dex, :app, :siz, :int, :edu,:avoid, :kick)
   end
 end

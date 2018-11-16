@@ -22,7 +22,7 @@ class AddDetailsToCharacters < ActiveRecord::Migration[5.2]
     add_column :characters, :raihuru, :integer
     add_column :characters, :oukyuu, :integer
     add_column :characters, :kagi, :integer
-    add_column :characters, :kskusu, :integer
+    add_column :characters, :kakusu, :integer
     add_column :characters, :kakureru, :integer
     add_column :characters, :kikimimi, :integer
     add_column :characters, :sinobi, :integer

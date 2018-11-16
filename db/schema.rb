@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_07_26_175029) do
     t.integer "raihuru"
     t.integer "oukyuu"
     t.integer "kagi"
-    t.integer "kskusu"
+    t.integer "kakusu"
     t.integer "kakureru"
     t.integer "kikimimi"
     t.integer "sinobi"

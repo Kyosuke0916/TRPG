@@ -1,2 +1,40 @@
-<h1>Characters#show</h1>
-<p>Find me in app/views/characters/show.html.erb</p>
+<table border="1">
+  <tr>
+    <th width="100px"></th><th>STR</th><th>CON</th><th>POW</th><th>DEX</th><th>APP</th><th>SIZ</th><th>INT</th>
+    <th>EDU</th><th>HP</th><th>MP</th><th>初期SAN</th><th>アイデア</th><th>幸運</th><th>知識</th>
+  </tr>
+  <td>能力値</td>
+  <td id="str"><%= @character.str %></td>
+  <td id="con"><%= @character.con %></td>
+  <td id="pow"><%= @character.pow %></td>
+  <td id="dex"><%= @character.dex %></td>
+  <td id="app"><%= @character.app %></td>
+  <td id="siz"><%= @character.siz %></td>
+  <td id="int"><%= @character.int %></td>
+  <td id="edu"><%= @character.edu %></td>
+  <td id="hp"><%= ( @character.con + @character.siz ) /2 %></td>
+  <td id="mp"><%= @character.pow %></td>
+  <td id="san"><%= @character.pow * 5 %></td>
+  <td id="idea"><%= @character.int * 5 %></td>
+  <td id="luck"><%= @character.pow * 5 %></td>
+  <td id="know"><%= @character.edu * 5 %></td>
+  </tr>
+</table>
+<label for="skill">戦闘技能</label>
+<div class="skill_buttle">
+  <table id="buttle_table" border="1">
+    <tr>
+      <th>技能名</th>
+      <th>技能値</th>
+    </tr>
+    <tr>
+      <th>回避</th>
+      <td><%= avoid %></td>
+    <tr>
+      <th>キック</th>
+      <td ><%= kick %>></td>
+    <tr>
+      <th></th>
+      <td ><%= kick %>></td>
+    </table>
+</div>

@@ -731,6 +731,62 @@
               </table>
     </div>
     <br>
-    <input type="submit" value="保存">
+  <%= form_for @character , :url => {:controller => 'characters',:action => 'create'} do |f| %>
+    <%= f.hidden_field :str, :value => @character.str%>
+    <%= f.hidden_field :con, :value => @character.con%>
+    <%= f.hidden_field :pow, :value => @character.pow%>
+    <%= f.hidden_field :dex, :value =>  @character.dex%>
+    <%= f.hidden_field :app, :value =>  @character.app%>
+    <%= f.hidden_field :siz, :value =>  @character.siz%>
+    <%= f.hidden_field :int, :value =>  @character.int%>
+    <%= f.hidden_field :edu, :value =>  @character.edu%>
+    <%= f.hidden_field :avoid, :value => @character.dex*2 %>
+    <%= f.hidden_field :kick, :value => @character.dex*2%>
+    <%= f.hidden_field :kumituki, :value => @character.dex*2%>
+    <%= f.hidden_field :kobusi, :value => @character.dex*2%>
+    <%= f.hidden_field :dutuki, :value => @character.dex*2%>
+    <%= f.hidden_field :touteki, :value => @character.dex*2%>
+    <%= f.hidden_field :masharu, :value => @character.dex*2%>
+    <%= f.hidden_field :kenjyuu, :value => @character.dex*2%>
+    <%= f.hidden_field :sabumasi, :value => @character.dex*2%>
+    <%= f.hidden_field :shottogun, :value => @character.dex*2 %>
+    <%= f.hidden_field :masingun, :value => @character.dex*2 %>
+    <%= f.hidden_field :raihuru, :value => @character.dex*2 %>
+    <%= f.hidden_field :oukyuu, :value => @character.dex*2 %>
+    <%= f.hidden_field :kagi, :value => @character.dex*2 %>
+    <%= f.hidden_field :kakusu, :value => @character.dex*2 %>
+    <%= f.hidden_field :kakureru, :value => @character.dex*2 %>
+    <%= f.hidden_field :sinobi, :value => @character.dex*2 %>
+    <%= f.hidden_field :shasin, :value => @character.dex*2 %>
+    <%= f.hidden_field :seisin, :value => @character.dex*2 %>
+    <%= f.hidden_field :tuiseki, :value => @character.dex*2 %>
+    <%= f.hidden_field :touhan, :value => @character.dex*2 %>
+    <%= f.hidden_field :toshokan, :value => @character.dex*2 %>
+    <%= f.hidden_field :mebosi, :value => @character.dex*2 %>
+    <%= f.hidden_field :unten, :value => @character.dex*2 %>
+    <%= f.hidden_field :shuri, :value => @character.dex*2 %>
+    <%= f.hidden_field :sousa, :value => @character.dex*2 %>
+    <%= f.hidden_field :jyouba, :value => @character.dex*2 %>
+    <%= f.hidden_field :suiei, :value => @character.dex*2 %>
+    <%= f.hidden_field :seisaku, :value => @character.dex*2 %>
+    <%= f.hidden_field :soujyuu, :value => @character.dex*2 %>
+    <%= f.hidden_field :tyouyaku, :value => @character.dex*2 %>
+    <%= f.hidden_field :denki, :value => @character.dex*2 %>
+    <%= f.hidden_field :nabi, :value => @character.dex*2 %>
+    <%= f.hidden_field :hensou, :value => @character.dex*2 %>
+    <%= f.hidden_field :iiku, :value => @character.dex*2 %>
+    <%= f.hidden_field :sinyou, :value => @character.dex*2 %>
+    <%= f.hidden_field :settoku , :value => @character.dex*2%>
+    <%= f.hidden_field :negiri, :value => @character.dex*2 %>
+    <%= f.hidden_field :native, :value => @character.dex*2 %>
+    <%= f.hidden_field :first, :value => @character.dex*2 %>
+    <%= f.hidden_field :second, :value => @character.dex*2 %>
+    <%= f.hidden_field :igaku, :value => @character.dex*2 %>
+    <%= f.hidden_field :okaruto, :value => @character.dex*2 %>
+    <%= f.hidden_field :kagaku, :value => @character.dex*2 %>
+    <%= f.hidden_field :coc, :value => @character.dex*2 %>
+
+    <%= f.submit %>
+  <% end %>
   </div>
 <%= javascript_include_tag 'skill_change.js' %>
