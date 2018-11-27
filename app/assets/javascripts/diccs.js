@@ -13,7 +13,7 @@ xhr.send();
 };
 })();
 
-window.onload = function() {
+$(document).ready (function() {
     document.getElementById("twenty_button").onclick = function () {
         requestAjax("http://localhost:3000/dices/twenty", function (response) {
             document.getElementById("twenty").innerHTML = response.val
@@ -44,7 +44,7 @@ window.onload = function() {
             document.getElementById("four").innerHTML = response.val
         });
     };
-}
+})
     $('#freedom_button').on('ajax:success', function(event) {
         console.dir(event)
         document.getElementById("freedom").innerHTML=(event.detail[0].val)
