@@ -1,5 +1,4 @@
 (function(){
-
     requestAjax = function(endpoint, callback) {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function(){

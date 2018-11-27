@@ -8,5 +8,66 @@ class AddDetailsToCharacters < ActiveRecord::Migration[5.2]
     add_column :characters, :siz, :integer
     add_column :characters, :int, :integer
     add_column :characters, :edu, :integer
+    add_column :characters, :avoid, :integer
+    add_column :characters, :kick, :integer
+    add_column :characters, :kumituki, :integer
+    add_column :characters, :kobusi, :integer
+    add_column :characters, :dutuki, :integer
+    add_column :characters, :touteki, :integer
+    add_column :characters, :masharu, :integer
+    add_column :characters, :kenjyuu, :integer
+    add_column :characters, :sabumasi, :integer
+    add_column :characters, :shottogun, :integer
+    add_column :characters, :masingun, :integer
+    add_column :characters, :raihuru, :integer
+    add_column :characters, :oukyuu, :integer
+    add_column :characters, :kagi, :integer
+    add_column :characters, :kakusu, :integer
+    add_column :characters, :kakureru, :integer
+    add_column :characters, :kikimimi, :integer
+    add_column :characters, :sinobi, :integer
+    add_column :characters, :shasin, :integer
+    add_column :characters, :seisin, :integer
+    add_column :characters, :tuiseki, :integer
+    add_column :characters, :touhan, :integer
+    add_column :characters, :toshokan, :integer
+    add_column :characters, :mebosi, :integer
+    add_column :characters, :unten, :integer
+    add_column :characters, :shuri, :integer
+    add_column :characters, :sousa, :integer
+    add_column :characters, :jyouba, :integer
+    add_column :characters, :suiei, :integer
+    add_column :characters, :seisaku, :integer
+    add_column :characters, :soujyuu, :integer
+    add_column :characters, :tyouyaku, :integer
+    add_column :characters, :denki, :integer
+    add_column :characters, :nabi, :integer
+    add_column :characters, :hensou, :integer
+    add_column :characters, :iiku, :integer
+    add_column :characters, :sinyou, :integer
+    add_column :characters, :settoku, :integer
+    add_column :characters, :negiri, :integer
+    add_column :characters, :native, :integer
+    add_column :characters, :first, :integer
+    add_column :characters, :second, :integer
+    add_column :characters, :igaku, :integer
+    add_column :characters, :okaruto, :integer
+    add_column :characters, :kagaku, :integer
+    add_column :characters, :coc, :integer
+    add_column :characters, :art, :integer
+    add_column :characters, :keiri, :integer
+    add_column :characters, :kouko, :integer
+    add_column :characters, :comp, :integer
+    add_column :characters, :sinri, :integer
+    add_column :characters, :human, :integer
+    add_column :characters, :seibutu, :integer
+    add_column :characters, :tisitu, :integer
+    add_column :characters, :densi, :integer
+    add_column :characters, :tenmon, :integer
+    add_column :characters, :hakubutu, :integer
+    add_column :characters, :buturi, :integer
+    add_column :characters, :houritu, :integer
+    add_column :characters, :yakugaku, :integer
+    add_column :characters, :rekisi, :integer
   end
 end
