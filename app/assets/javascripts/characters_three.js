@@ -13,7 +13,7 @@
 })();
 
 
-window.onload = function() {
+$(document).ready(function() {
     str_dice = document.getElementById("str_button").onclick = function () {
         requestAjax("http://localhost:3000/characters/three", function (response) {
             document.getElementById("str").innerHTML = response.val
@@ -82,4 +82,4 @@ window.onload = function() {
 
 
 
-};
+})
