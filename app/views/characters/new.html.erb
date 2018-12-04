@@ -1,5 +1,5 @@
-
-<button type="button" value="all_button" name="all_button" id="all_button">
+<div class="container">
+<button type="button" value="all_button" name="all_button" id="all_button", class= "btn btn-primary">
   一括で降る
 </button>
 <table>
@@ -19,17 +19,17 @@
       STR
     </td>
     <td>
-      <%= button_to('3d6',characters_three_path, method: :get, id: :str_button, :remote=>true)   %>
+      <%= button_to('3d6',characters_three_path, method: :get, id: :str_button, :remote=>true,class: "btn btn-primary")   %>
     </td>
     <td id="str">
     </td>
   </tr>
   <tr>
     <td>
-      con
+      CON
     </td>
     <td>
-      <%= button_to('3d6',characters_three_path, method: :get, id: :con_button, :remote=>true)   %>
+      <%= button_to('3d6',characters_three_path, method: :get, id: :con_button, :remote=>true, class: "btn btn-primary")   %>
     </td>
     <td id="con">
 
@@ -37,10 +37,10 @@
   </tr>
   <tr>
     <td>
-      pow
+      POW
     </td>
     <td>
-      <%= button_to('3d6',characters_three_path, method: :get, id: :pow_button, :remote=>true) %>
+      <%= button_to('3d6',characters_three_path, method: :get, id: :pow_button, :remote=>true, class: "btn btn-primary") %>
     </td>
     <td id="pow">
 
@@ -48,10 +48,10 @@
   </tr>
   <tr>
     <td>
-      dex
+      DEX
     </td>
     <td>
-      <%= button_to('3d6',characters_three_path, method: :get, id: :dex_button, :remote=>true) %>
+      <%= button_to('3d6',characters_three_path, method: :get, id: :dex_button, :remote=>true, class: "btn btn-primary") %>
     </td>
     <td id="dex">
 
@@ -59,10 +59,10 @@
   </tr>
   <tr>
     <td>
-      app
+      APP
     </td>
     <td>
-      <%= button_to('3d6',characters_three_path, method: :get, id: :app_button, :remote=>true) %>
+      <%= button_to('3d6',characters_three_path, method: :get, id: :app_button, :remote=>true, class: "btn btn-primary") %>
     </td>
     <td id="app">
 
@@ -73,7 +73,7 @@
       SIZ
     </td>
     <td>
-      <%= button_to('2d6+6',characters_two6_path, method: :get, id: :siz_button, :remote=>true) %>
+      <%= button_to('2d6+6',characters_two6_path, method: :get, id: :siz_button, :remote=>true,class: "btn btn-primary") %>
     </td>
     <td id="siz">
 
@@ -84,7 +84,7 @@
       INT
     </td>
     <td>
-      <%= button_to('2d6+6',characters_two6_path, method: :get, id: :int_button, :remote=>true) %>
+      <%= button_to('2d6+6',characters_two6_path, method: :get, id: :int_button, :remote=>true, class: "btn btn-primary") %>
     </td>
     <td id="int">
 
@@ -94,7 +94,7 @@
       EDU
     </td>
     <td>
-      <%= button_to('3d6+3',characters_three3_path, method: :get, id: :edu_button, :remote=>true) %>
+      <%= button_to('3d6+3',characters_three3_path, method: :get, id: :edu_button, :remote=>true, class: "btn btn-primary") %>
     </td>
     <td id="edu">
 
@@ -102,7 +102,7 @@
   </tr>
   </tr>
 </table>
-
+</div>
 <%= form_for @character, :url=>{:action => 'skill_set'} do |f| %>
   <%= f.hidden_field :str %>
   <%= f.hidden_field :con %>

@@ -4,8 +4,7 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @character=Character.new(character_skill_params)
-    @character.save
+    @character=current_user.characters.new(character_skill_params)
     if @character.save
       redirect_to @character
     else
@@ -14,11 +13,11 @@ class CharactersController < ApplicationController
   end
 
   def index
-    @character=Character.all
+    @characters=current_user.characters.all
   end
 
   def show
-    @character=Character.find(params[:id])
+    @character=current_user.characters.find(params[:id])
   end
 
   def edit
@@ -65,6 +64,6 @@ class CharactersController < ApplicationController
   end
 
   def character_skill_params
-    params.require(:character).permit(:str, :con, :pow, :dex, :app, :siz, :int, :edu,:avoid, :kick)
+    params.require(:character).permit(:str, :con, :pow, :dex, :app, :siz, :int, :edu,:avoid, :kick, :kumituki, :kobusi, :dutuki, :touteki, :masharu, :kenjyuu, :sabumasi, :shottogun, :masingun, :raihuru, :oukyuu, :kagi, :kakusu, :kakureru, :kikimimi, :sinobi, :shasin, :seisin, :tuiseki, :touhan, :toshokan, :mebosi, :unten, :shuri, :sousa, :jyouba, :suiei, :seisaku, :soujyuu, :tyouyaku, :denki, :nabi, :hensou, :iiku, :sinyou, :settoku, :negiri, :native, :first, :second, :igaku, :okaruto, :kagaku, :coc, :art, :keiri, :kouko, :comp, :sinri, :human, :seibutu, :tisitu, :densi, :tenmon, :hakubutu, :buturi, :houritu, :yakugaku, :rekisi)
   end
 end

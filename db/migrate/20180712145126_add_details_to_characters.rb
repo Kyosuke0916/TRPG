@@ -69,5 +69,6 @@ class AddDetailsToCharacters < ActiveRecord::Migration[5.2]
     add_column :characters, :houritu, :integer
     add_column :characters, :yakugaku, :integer
     add_column :characters, :rekisi, :integer
+    add_column :characters, :name, :string
   end
 end

@@ -1,4 +1,5 @@
 <table border="1">
+  <h1>名前: <%= @character.name %></h1>
   <tr>
     <th width="100px"></th><th>STR</th><th>CON</th><th>POW</th><th>DEX</th><th>APP</th><th>SIZ</th><th>INT</th>
     <th>EDU</th><th>HP</th><th>MP</th><th>初期SAN</th><th>アイデア</th><th>幸運</th><th>知識</th>
@@ -29,12 +30,232 @@
     </tr>
     <tr>
       <th>回避</th>
-      <td><%= avoid %></td>
+      <td><%= @character.avoid %></td>
+    </tr>
     <tr>
       <th>キック</th>
-      <td ><%= kick %>></td>
+      <td ><%= @character.kick %></td>
+    </tr>
     <tr>
-      <th></th>
-      <td ><%= kick %>></td>
-    </table>
+      <th>組み付き</th>
+      <td ><%= @character.kumituki %></td>
+    </tr>
+    <tr>
+      <th>こぶし</th>
+      <td ><%= @character.kobusi %></td>
+    </tr>
+    <tr>
+      <th>頭突き</th>
+      <td ><%= @character.dutuki %></td>
+    </tr>
+    <tr>
+      <th>投擲</th>
+      <td ><%= @character.touteki %></td>
+    </tr>
+    <tr>
+      <th>マーシャルアーツ</th>
+      <td ><%= @character.masharu %></td>
+    </tr>
+    <tr>
+      <th>拳銃</th>
+      <td ><%= @character.kenjyuu %></td>
+    </tr>
+    <tr>
+      <th>サブマシンガン</th>
+      <td ><%= @character.sabumasi %></td>
+    </tr>
+    <tr>
+      <th>ショットガン</th>
+      <td ><%= @character.shottogun %></td>
+    </tr>
+    <tr>
+      <th>マシンガン</th>
+      <td ><%= @character.masingun %></td>
+    </tr>
+    <tr>
+      <th>ライフル</th>
+      <td ><%= @character.raihuru %></td>
+    </tr>
+  </table>
 </div>
+  <label for="skill">探索技能</label>
+  <div class="skill_buttle">
+    <table id="buttle_table" border="1">
+      <tr>
+        <th>技能名</th>
+        <th>技能値</th>
+      </tr>
+      <tr>
+        <th>応急手当</th>
+        <td><%= @character.oukyuu %></td>
+      </tr>
+      <tr>
+        <th>鍵開け</th>
+        <td ><%= @character.kagi %></td>
+      </tr>
+      <tr>
+        <th>隠す</th>
+        <td ><%= @character.kakusu %></td>
+      </tr>
+      <tr>
+        <th>隠れる</th>
+        <td ><%= @character.kakureru %></td>
+      </tr>
+      <tr>
+        <th>聞き耳</th>
+        <td ><%= @character.kikimimi %></td>
+      </tr>
+      <tr>
+        <th>忍び歩き</th>
+        <td ><%= @character.sinobi %></td>
+      </tr>
+      <tr>
+        <th>写真術</th>
+        <td ><%= @character.shasin %></td>
+      </tr>
+      <tr>
+        <th>精神分析</th>
+        <td ><%= @character.seisin %></td>
+      </tr>
+      <tr>
+        <th>追跡</th>
+        <td ><%= @character.tuiseki %></td>
+      </tr>
+      <tr>
+        <th>登攀</th>
+        <td ><%= @character.touhan %></td>
+      </tr>
+      <tr>
+        <th>図書館</th>
+        <td ><%= @character.toshokan %></td>
+      </tr>
+      <tr>
+        <th>目星</th>
+        <td ><%= @character.mebosi %></td>
+      </tr>
+    </table>
+    <label for="skill">交渉技能</label>
+    <div class="skill_buttle">
+      <table id="buttle_table" border="1">
+        <tr>
+          <th>技能名</th>
+          <th>技能値</th>
+        </tr>
+        <tr>
+          <th>言いくるめ</th>
+          <td><%= @character.iiku %></td>
+        </tr>
+        <tr>
+          <th>信用</th>
+          <td ><%= @character.sinyou %></td>
+        </tr>
+        <tr>
+          <th>説得</th>
+          <td ><%= @character.settoku %></td>
+        </tr>
+        <tr>
+          <th>値切り</th>
+          <td ><%= @character.negiri %></td>
+        </tr>
+        <tr>
+          <th>母国語</th>
+          <td ><%= @character.native %></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td ><%= @character.first %></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td ><%= @character.second %></td>
+        </tr>
+      </table>
+    </div>
+      <label for="skill">知能技能</label>
+      <div class="skill_buttle">
+        <table id="buttle_table" border="1">
+          <tr>
+            <th>技能名</th>
+            <th>技能値</th>
+          </tr>
+          <tr>
+            <th>医学</th>
+            <td><%= @character.igaku %></td>
+          </tr>
+          <tr>
+            <th>オカルト</th>
+            <td ><%= @character.okaruto %></td>
+          </tr>
+          <tr>
+            <th>化学</th>
+            <td ><%= @character.kagaku %></td>
+          </tr>
+          <tr>
+            <th>クトゥルフ神話</th>
+            <td ><%= @character.coc %></td>
+          </tr>
+          <tr>
+            <th>芸術</th>
+            <td ><%= @character.art %></td>
+          </tr>
+          <tr>
+            <th>経理</th>
+            <td ><%= @character.keiri %></td>
+          </tr>
+          <tr>
+            <th>考古学</th>
+            <td ><%= @character.kouko %></td>
+          </tr>
+          <tr>
+            <th>コンピュータ</th>
+            <td ><%= @character.comp %></td>
+          </tr>
+          <tr>
+            <th>心理学</th>
+            <td ><%= @character.sinri %></td>
+          </tr>
+          <tr>
+            <th>人類学</th>
+            <td ><%= @character.human %></td>
+          </tr>
+          <tr>
+            <th>生物学</th>
+            <td ><%= @character.seibutu %></td>
+          </tr>
+          <tr>
+            <th>地質学</th>
+            <td ><%= @character.tisitu %></td>
+          </tr>
+          <tr>
+            <th>電子工学</th>
+            <td ><%= @character.densi %></td>
+          </tr>
+          <tr>
+            <th>天文学</th>
+            <td ><%= @character.tenmon %></td>
+          </tr>
+          <tr>
+            <th>博物学</th>
+            <td ><%= @character.hakubutu %></td>
+          </tr>
+          <tr>
+            <th>物理学</th>
+            <td ><%= @character.buturi %></td>
+          </tr>
+          <tr>
+            <th>法律</th>
+            <td ><%= @character.houritu %></td>
+          </tr>
+          <tr>
+            <th>薬学</th>
+            <td ><%= @character.yakugaku %></td>
+          </tr>
+          <tr>
+            <th>歴史</th>
+            <td ><%= @character.rekisi %></td>
+          </tr>
+        </table>
+
+      </div>
+    <%= link_to "一覧にもどるよ！", characters_path %>
+  </div>
