@@ -94,12 +94,12 @@
       <tr>
       <th>職業P</th>
         <td>/<%= @character.edu * 20 %></td>
-        <td>(うち追加分:<input type="number" max="99">)</td>
+        <td id="pro_sum"></td>
       </tr>
       <tr>
         <th>興味P</th>
         <td>/<%= @character.int * 10 %></td>
-        <td>(うち追加分:<input type="number" max="99">)</td>
+        <td>(うち追加分:<input id="ist_sum" type="number" max="99">)</td>
       </tr>
     </table>
   </div>
@@ -244,7 +244,7 @@
           </tr>
           <tr>
             <th>応急手当</th>
-            <td id="oukyuu">0</td>
+            <td id="oukyuu">30</td>
             <td><input id="oukyuu_ist" type="number" max="99"></td>
             <td><input id="oukyuu_pro" type="number" max="99"></td>
             <td><input type="number" max="99"></td>
@@ -253,7 +253,7 @@
           </tr>
           <tr>
             <th>鍵開け</th>
-            <td id="kagi">２５</td>
+            <td id="kagi">1</td>
             <td><input id="kagi_ist" type="number" max="99"></td>
             <td><input id="kagi_pro" type="number" max="99"></td>
             <td><input type="number" max="99"></td>
@@ -262,7 +262,7 @@
           </tr>
           <tr>
             <th>隠す</th>
-            <td id="kakusu">２５</td>
+            <td id="kakusu">15</td>
             <td><input id="kakusu_ist" type="number" max="99"></td>
             <td><input id="kakusu_pro" type="number" max="99"></td>
             <td><input type="number" max="99"></td>
@@ -271,7 +271,7 @@
           </tr>
           <tr>
             <th>隠れる</th>
-            <td id="kakureru">50</td>
+            <td id="kakureru">10</td>
             <td><input id="kakureru_ist" type="number" max="99"></td>
             <td><input id="kakureru_pro"type="number" max="99"></td>
             <td><input type="number" max="99"></td>
@@ -280,7 +280,7 @@
           </tr>
           <tr>
             <th>聞き耳</th>
-            <td id="kikimimi">10</td>
+            <td id="kikimimi">25</td>
             <td><input id="kikimimi_ist" type="number" max="99"></td>
             <td><input id="kikimimi_pro" type="number" max="99"></td>
             <td><input type="number" max="99"></td>
@@ -289,7 +289,7 @@
           </tr>
           <tr>
             <th>忍び歩き</th>
-            <td id="sinobi">25</td>
+            <td id="sinobi">10</td>
             <td><input id="sinobi_ist" type="number" max="99"></td>
             <td><input id="sinobi_pro" type="number" max="99"></td>
             <td><input type="number" max="99"></td>
@@ -298,7 +298,7 @@
           </tr>
           <tr>
             <th>写真術</th>
-            <td id="shasin">1</td>
+            <td id="shasin">10</td>
             <td><input id="shasin_ist" type="number" max="99"></td>
             <td><input id="shasin_pro" type="number" max="99"></td>
             <td><input type="number" max="99"></td>
@@ -307,7 +307,7 @@
           </tr>
           <tr>
             <th>精神分析</th>
-            <td id="seisin">20</td>
+            <td id="seisin">1</td>
             <td><input id="seisin_ist" type="number" max="99"></td>
             <td><input id="seisin_pro" type="number" max="99"></td>
             <td><input type="number" max="99"></td>
@@ -316,7 +316,7 @@
           </tr>
           <tr>
             <th>追跡</th>
-            <td id="tuiseki">15</td>
+            <td id="tuiseki">10</td>
             <td><input id="tuiseki_ist" type="number" max="99"></td>
             <td><input id="tuiseki_pro" type="number" max="99"></td>
             <td><input type="number" max="99"></td>
@@ -325,7 +325,7 @@
           </tr>
           <tr>
             <th>登攀</th>
-            <td id="touhan">30</td>
+            <td id="touhan">40</td>
             <td><input id="touhan_ist" type="number" max="99"></td>
             <td><input id="touhan_pro" type="number" max="99"></td>
             <td></td>
@@ -334,7 +334,7 @@
           </tr>
           <tr>
             <th>図書館</th>
-            <td id="toshokan">15</td>
+            <td id="toshokan">25</td>
             <td><input id="toshokan_ist" type="number" max="99"></td>
             <td><input id="toshokan_pro" type="number" max="99"></td>
             <td></td>
@@ -367,7 +367,7 @@
             </tr>
             <tr>
               <th>運転</th>
-              <td id="unten">0</td>
+              <td id="unten">20</td>
               <td><input id="unten_ist" type="number" max="99"></td>
               <td><input id="unten_pro" type="number" max="99"></td>
               <td><input type="number" max="99"></td>
@@ -376,7 +376,7 @@
             </tr>
             <tr>
               <th>機械修理</th>
-              <td id="shuri">２５</td>
+              <td id="shuri">20</td>
               <td><input id="shuri_ist" type="number" max="99"></td>
               <td><input id="shuri_pro" type="number" max="99"></td>
               <td><input type="number" max="99"></td>
@@ -385,7 +385,7 @@
             </tr>
             <tr>
               <th>重機械操作</th>
-              <td id="sousa">２５</td>
+              <td id="sousa">1</td>
               <td><input id="sousa_ist" type="number" max="99"></td>
               <td><input id="sousa_pro" type="number" max="99"></td>
               <td><input type="number" max="99"></td>
@@ -394,7 +394,7 @@
             </tr>
             <tr>
               <th>乗馬</th>
-              <td id="jyouba">50</td>
+              <td id="jyouba">5</td>
               <td><input id="jyouba_ist" type="number" max="99"></td>
               <td><input id="jyouba_pro" type="number" max="99"></td>
               <td><input type="number" max="99"></td>
@@ -403,7 +403,7 @@
             </tr>
             <tr>
               <th>水泳</th>
-              <td id="suiei">10</td>
+              <td id="suiei">25</td>
               <td><input id="suiei_ist" type="number" max="99"></td>
               <td><input id="suiei_pro" type="number" max="99"></td>
               <td><input type="number" max="99"></td>
@@ -412,7 +412,7 @@
             </tr>
             <tr>
               <th>製作</th>
-              <td id="seisaku">25</td>
+              <td id="seisaku">5</td>
               <td><input id="seisaku_ist" type="number" max="99"></td>
               <td><input id="seisaku_pro" type="number" max="99"></td>
               <td><input type="number" max="99"></td>
@@ -430,7 +430,7 @@
             </tr>
             <tr>
               <th>跳躍</th>
-              <td id="tyouyaku">20</td>
+              <td id="tyouyaku">25</td>
               <td><input id="tyouyaku_ist" type="number" max="99"></td>
               <td><input id="tyouyaku_pro" type="number" max="99"></td>
               <td><input type="number" max="99"></td>
@@ -439,7 +439,7 @@
             </tr>
             <tr>
               <th>電気修理</th>
-              <td id="denki">15</td>
+              <td id="denki">10</td>
               <td><input id="denki_ist" type="number" max="99"></td>
               <td><input id="denki_pro" type="number" max="99"></td>
               <td><input type="number" max="99"></td>
@@ -448,7 +448,7 @@
             </tr>
             <tr>
               <th>ナビゲート</th>
-              <td id="nabi">30</td>
+              <td id="nabi">10</td>
               <td><input id="nabi_ist" type="number" max="99"></td>
               <td><input id="nabi_pro" type="number" max="99"></td>
               <td></td>
@@ -457,7 +457,7 @@
             </tr>
             <tr>
               <th>変装</th>
-              <td id="hensou">15</td>
+              <td id="hensou">1</td>
               <td><input id="hensou_ist" type="number" max="99"></td>
               <td><input id="hensou_pro" type="number" max="99"></td>
               <td></td>
@@ -481,7 +481,7 @@
               </tr>
               <tr>
                 <th>言いくるめ</th>
-                <td id="iiku">0</td>
+                <td id="iiku">5</td>
                 <td><input id="iiku_ist" type="number" max="99"></td>
                 <td><input id="iiku_pro" type="number" max="99"></td>
                 <td><input type="number" max="99"></td>
@@ -490,7 +490,7 @@
               </tr>
               <tr>
                 <th>信用</th>
-                <td id="sinyou">２５</td>
+                <td id="sinyou">15</td>
                 <td><input id="sinyou_ist" type="number" max="99"></td>
                 <td><input id="sinyou_pro" type="number" max="99"></td>
                 <td><input type="number" max="99"></td>
@@ -499,7 +499,7 @@
               </tr>
               <tr>
                 <th>説得</th>
-                <td id="settoku">２５</td>
+                <td id="settoku">15</td>
                 <td><input id="settoku_ist" type="number" max="99"></td>
                 <td><input id="settoku_pro" type="number" max="99"></td>
                 <td><input type="number" max="99"></td>
@@ -508,7 +508,7 @@
               </tr>
               <tr>
                 <th>値切り</th>
-                <td id="negiri">50</td>
+                <td id="negiri">5</td>
                 <td><input id="negiri_ist" type="number" max="99"></td>
                 <td><input id="negiri_pro" type="number" max="99"></td>
                 <td><input type="number" max="99"></td>
@@ -517,7 +517,7 @@
               </tr>
               <tr>
                 <th>母国語</th>
-                <td id="native">10</td>
+                <td id="native">20</td>
                 <td><input id="native_ist" type="number" max="99"></td>
                 <td><input id="native_pro" type="number" max="99"></td>
                 <td><input type="number" max="99"></td>
@@ -526,7 +526,7 @@
               </tr>
               <tr>
                 <th>　</th>
-                <td>25</td>
+                <td>1</td>
                 <td><input type="number" max="99"></td>
                 <td><input type="number" max="99"></td>
                 <td><input type="number" max="99"></td>
@@ -559,7 +559,7 @@
                 </tr>
                 <tr>
                   <th>医学</th>
-                  <td id="igaku">0</td>
+                  <td id="igaku">5</td>
                   <td><input id="igaku_ist" type="number" max="99"></td>
                   <td><input id="igaku_pro" type="number" max="99"></td>
                   <td><input type="number" max="99"></td>
@@ -568,7 +568,7 @@
                 </tr>
                 <tr>
                   <th>オカルト</th>
-                  <td id="okaruto">２５</td>
+                  <td id="okaruto">5</td>
                   <td><input id="okaruto_ist" type="number" max="99"></td>
                   <td><input id="okaruto_pro" type="number" max="99"></td>
                   <td><input type="number" max="99"></td>
@@ -577,7 +577,7 @@
                 </tr>
                 <tr>
                   <th>化学</th>
-                  <td id="kagaku">２５</td>
+                  <td id="kagaku">1</td>
                   <td><input id="kagaku_ist" type="number" max="99"></td>
                   <td><input is="kagaku_pro" type="number" max="99"></td>
                   <td><input type="number" max="99"></td>
@@ -586,7 +586,7 @@
                 </tr>
                 <tr>
                   <th>クトゥルフ神話</th>
-                  <td id="coc">50</td>
+                  <td id="coc">0</td>
                   <td><input id="coc_ist" type="number" max="99"></td>
                   <td><input id="coc_pro" type="number" max="99"></td>
                   <td><input type="number" max="99"></td>
@@ -595,7 +595,7 @@
                 </tr>
                 <tr>
                   <th>芸術</th>
-                  <td id="art">10</td>
+                  <td id="art">5</td>
                   <td><input id="art_ist" type="number" max="99"></td>
                   <td><input id="art_pro" type="number" max="99"></td>
                   <td><input type="number" max="99"></td>
@@ -604,7 +604,7 @@
                 </tr>
                 <tr>
                   <th>経理</th>
-                  <td id="keiri">25</td>
+                  <td id="keiri">10</td>
                   <td><input id="keiri_ist" type="number" max="99"></td>
                   <td><input id="keiri_pro" type="number" max="99"></td>
                   <td><input type="number" max="99"></td>
@@ -622,7 +622,7 @@
                 </tr>
                 <tr>
                   <th>コンピューター</th>
-                  <td id="comp">20</td>
+                  <td id="comp">1</td>
                   <td><input id="comp_ist" type="number" max="99"></td>
                   <td><input id="comp_pro" type="number" max="99"></td>
                   <td><input type="number" max="99"></td>
@@ -631,7 +631,7 @@
                 </tr>
                 <tr>
                   <th>心理学</th>
-                  <td id="sinri">15</td>
+                  <td id="sinri">5</td>
                   <td><input id="sinri_ist" type="number" max="99"></td>
                   <td><input id="sinri_pro" type="number" max="99"></td>
                   <td><input type="number" max="99"></td>
@@ -640,7 +640,7 @@
                 </tr>
                 <tr>
                   <th>人類学</th>
-                  <td id="human">30</td>
+                  <td id="human">1</td>
                   <td><input id="human_ist" type="number" max="99"></td>
                   <td><input id="human_pro" type="number" max="99"></td>
                   <td></td>
@@ -649,7 +649,7 @@
                 </tr>
                 <tr>
                   <th>生物学</th>
-                  <td id="seibutu">15</td>
+                  <td id="seibutu">1</td>
                   <td><input id="seibutu_ist" type="number" max="99"></td>
                   <td><input id="seibutu_pro" type="number" max="99"></td>
                   <td></td>
@@ -658,7 +658,7 @@
                 </tr>
                 <tr>
                   <th>地質学</th>
-                  <td id="tisitu">25</td>
+                  <td id="tisitu">1</td>
                   <td><input id="tisitu_ist" type="number" max="99"></td>
                   <td><input id="tisitu_pro" type="number" max="99"></td>
                   <td></td>
@@ -667,7 +667,7 @@
                 </tr>
                 <tr>
                   <th>電子工学</th>
-                  <td id="densi">25</td>
+                  <td id="densi">1</td>
                   <td><input id="densi_ist" type="number" max="99"></td>
                   <td><input id="densi_pro" type="number" max="99"></td>
                   <td><input type="number" max="99"></td>
@@ -685,7 +685,7 @@
                 </tr>
                 <tr>
                   <th>博物学</th>
-                  <td id="hakubutu">20</td>
+                  <td id="hakubutu">10</td>
                   <td><input id="hakubutu_ist" type="number" max="99"></td>
                   <td><input id="hakubutu_pro" type="number" max="99"></td>
                   <td><input type="number" max="99"></td>
@@ -694,7 +694,7 @@
                 </tr>
                 <tr>
                   <th>物理学</th>
-                  <td id="buturi">15</td>
+                  <td id="buturi">1</td>
                   <td><input id="buturi_ist" type="number" max="99"></td>
                   <td><input id="buturi_pro" type="number" max="99"></td>
                   <td><input type="number" max="99"></td>
@@ -703,7 +703,7 @@
                 </tr>
                 <tr>
                   <th>法律</th>
-                  <td id="houritu">30</td>
+                  <td id="houritu">5</td>
                   <td><input id="houritu_ist" type="number" max="99"></td>
                   <td><input id="houritu_pro" type="number" max="99"></td>
                   <td></td>
@@ -712,7 +712,7 @@
                 </tr>
                 <tr>
                   <th>薬学</th>
-                  <td id="yakugaku">15</td>
+                  <td id="yakugaku">1</td>
                   <td><input id="yakugaku_ist" type="number" max="99"></td>
                   <td><input id="yakugaku_pro" type="number" max="99"></td>
                   <td></td>
@@ -721,7 +721,7 @@
                 </tr>
                 <tr>
                   <th>歴史</th>
-                  <td id="rekisi">25</td>
+                  <td id="rekisi">20</td>
                   <td><input id="rekisi_ist" type="number" max="99"></td>
                   <td><input id="rekisi_pro" type="number" max="99"></td>
                   <td></td>
@@ -742,66 +742,66 @@
     <%= f.hidden_field :int, :value =>  @character.int%>
     <%= f.hidden_field :edu, :value =>  @character.edu%>
     <%= f.hidden_field :avoid, :value => @character.dex*2 %>
-    <%= f.hidden_field :kick, :value => @character.dex*2%>
-    <%= f.hidden_field :kumituki, :value => @character.dex*2%>
-    <%= f.hidden_field :kobusi, :value => @character.dex*2%>
-    <%= f.hidden_field :dutuki, :value => @character.dex*2%>
-    <%= f.hidden_field :touteki, :value => @character.dex*2%>
-    <%= f.hidden_field :masharu, :value => @character.dex*2%>
-    <%= f.hidden_field :kenjyuu, :value => @character.dex*2%>
-    <%= f.hidden_field :sabumasi, :value => @character.dex*2%>
-    <%= f.hidden_field :shottogun, :value => @character.dex*2 %>
-    <%= f.hidden_field :masingun, :value => @character.dex*2 %>
-    <%= f.hidden_field :raihuru, :value => @character.dex*2 %>
-    <%= f.hidden_field :oukyuu, :value => @character.dex*2 %>
-    <%= f.hidden_field :kagi, :value => @character.dex*2 %>
-    <%= f.hidden_field :kakusu, :value => @character.dex*2 %>
-    <%= f.hidden_field :kakureru, :value => @character.dex*2 %>
-    <%= f.hidden_field :sinobi, :value => @character.dex*2 %>
-    <%= f.hidden_field :shasin, :value => @character.dex*2 %>
-    <%= f.hidden_field :seisin, :value => @character.dex*2 %>
-    <%= f.hidden_field :tuiseki, :value => @character.dex*2 %>
-    <%= f.hidden_field :touhan, :value => @character.dex*2 %>
-    <%= f.hidden_field :toshokan, :value => @character.dex*2 %>
-    <%= f.hidden_field :kikimimi, :value => @character.dex*2 %>
-    <%= f.hidden_field :mebosi, :value => @character.dex*2 %>
-    <%= f.hidden_field :unten, :value => @character.dex*2 %>
-    <%= f.hidden_field :shuri, :value => @character.dex*2 %>
-    <%= f.hidden_field :sousa, :value => @character.dex*2 %>
-    <%= f.hidden_field :jyouba, :value => @character.dex*2 %>
-    <%= f.hidden_field :suiei, :value => @character.dex*2 %>
-    <%= f.hidden_field :seisaku, :value => @character.dex*2 %>
-    <%= f.hidden_field :soujyuu, :value => @character.dex*2 %>
-    <%= f.hidden_field :tyouyaku, :value => @character.dex*2 %>
-    <%= f.hidden_field :denki, :value => @character.dex*2 %>
-    <%= f.hidden_field :nabi, :value => @character.dex*2 %>
-    <%= f.hidden_field :hensou, :value => @character.dex*2 %>
-    <%= f.hidden_field :iiku, :value => @character.dex*2 %>
-    <%= f.hidden_field :sinyou, :value => @character.dex*2 %>
-    <%= f.hidden_field :settoku , :value => @character.dex*2%>
-    <%= f.hidden_field :negiri, :value => @character.dex*2 %>
-    <%= f.hidden_field :native, :value => @character.dex*2 %>
-    <%= f.hidden_field :first, :value => @character.dex*2 %>
-    <%= f.hidden_field :second, :value => @character.dex*2 %>
-    <%= f.hidden_field :igaku, :value => @character.dex*2 %>
-    <%= f.hidden_field :okaruto, :value => @character.dex*2 %>
-    <%= f.hidden_field :kagaku, :value => @character.dex*2 %>
-    <%= f.hidden_field :coc, :value => @character.dex*2 %>
-    <%= f.hidden_field :art, :value => @character.dex*2 %>
-    <%= f.hidden_field :keiri, :value => @character.dex*2 %>
-    <%= f.hidden_field :kouko, :value => @character.dex*2 %>
-    <%= f.hidden_field :comp, :value => @character.dex*2 %>
-    <%= f.hidden_field :sinri, :value => @character.dex*2 %>
-    <%= f.hidden_field :human, :value => @character.dex*2 %>
-    <%= f.hidden_field :seibutu, :value => @character.dex*2 %>
-    <%= f.hidden_field :tisitu, :value => @character.dex*2 %>
-    <%= f.hidden_field :densi, :value => @character.dex*2 %>
-    <%= f.hidden_field :tenmon, :value => @character.dex*2 %>
-    <%= f.hidden_field :hakubutu , :value => @character.dex*2%>
-    <%= f.hidden_field :buturi, :value => @character.dex*2 %>
-    <%= f.hidden_field :houritu, :value => @character.dex*2 %>
-    <%= f.hidden_field :yakugaku, :value => @character.dex*2 %>
-    <%= f.hidden_field :rekisi, :value => @character.dex*2 %>
+    <%= f.hidden_field :kick, :value => 25 %>
+    <%= f.hidden_field :kumituki, :value => 25 %>
+    <%= f.hidden_field :kobusi, :value => 50 %>
+    <%= f.hidden_field :dutuki, :value => 10 %>
+    <%= f.hidden_field :touteki, :value => 25 %>
+    <%= f.hidden_field :masharu, :value => 1 %>
+    <%= f.hidden_field :kenjyuu, :value => 20 %>
+    <%= f.hidden_field :sabumasi, :value => 15 %>
+    <%= f.hidden_field :shottogun, :value => 30 %>
+    <%= f.hidden_field :masingun, :value => 15 %>
+    <%= f.hidden_field :raihuru, :value => 25 %>
+    <%= f.hidden_field :oukyuu, :value => 30 %>
+    <%= f.hidden_field :kagi, :value => 1 %>
+    <%= f.hidden_field :kakusu, :value => 15 %>
+    <%= f.hidden_field :kakureru, :value => 10 %>
+    <%= f.hidden_field :sinobi, :value => 10 %>
+    <%= f.hidden_field :shasin, :value => 10 %>
+    <%= f.hidden_field :seisin, :value => 1 %>
+    <%= f.hidden_field :tuiseki, :value => 10 %>
+    <%= f.hidden_field :touhan, :value => 40 %>
+    <%= f.hidden_field :toshokan, :value => 25 %>
+    <%= f.hidden_field :kikimimi, :value => 25 %>
+    <%= f.hidden_field :mebosi, :value => 25 %>
+    <%= f.hidden_field :unten, :value => 20 %>
+    <%= f.hidden_field :shuri, :value => 20 %>
+    <%= f.hidden_field :sousa, :value => 1 %>
+    <%= f.hidden_field :jyouba, :value => 5 %>
+    <%= f.hidden_field :suiei, :value => 25 %>
+    <%= f.hidden_field :seisaku, :value => 5 %>
+    <%= f.hidden_field :soujyuu, :value => 1 %>
+    <%= f.hidden_field :tyouyaku, :value => 25 %>
+    <%= f.hidden_field :denki, :value => 10 %>
+    <%= f.hidden_field :nabi, :value => 10 %>
+    <%= f.hidden_field :hensou, :value => 1 %>
+    <%= f.hidden_field :iiku, :value => 5 %>
+    <%= f.hidden_field :sinyou, :value => 15 %>
+    <%= f.hidden_field :settoku , :value => 15 %>
+    <%= f.hidden_field :negiri, :value => 5 %>
+    <%= f.hidden_field :native, :value => @character.edu*5 %>
+    <%= f.hidden_field :first, :value => 1 %>
+    <%= f.hidden_field :second, :value => 1 %>
+    <%= f.hidden_field :igaku, :value => 5 %>
+    <%= f.hidden_field :okaruto, :value => 5 %>
+    <%= f.hidden_field :kagaku, :value => 1 %>
+    <%= f.hidden_field :coc, :value => 0 %>
+    <%= f.hidden_field :art, :value => 5 %>
+    <%= f.hidden_field :keiri, :value => 10 %>
+    <%= f.hidden_field :kouko, :value => 1 %>
+    <%= f.hidden_field :comp, :value => 1 %>
+    <%= f.hidden_field :sinri, :value => 5 %>
+    <%= f.hidden_field :human, :value => 1 %>
+    <%= f.hidden_field :seibutu, :value => 1 %>
+    <%= f.hidden_field :tisitu, :value => 1 %>
+    <%= f.hidden_field :densi, :value => 1 %>
+    <%= f.hidden_field :tenmon, :value => 1 %>
+    <%= f.hidden_field :hakubutu , :value => 10 %>
+    <%= f.hidden_field :buturi, :value => 1 %>
+    <%= f.hidden_field :houritu, :value => 5 %>
+    <%= f.hidden_field :yakugaku, :value => 1 %>
+    <%= f.hidden_field :rekisi, :value => 20 %>
 
     <%= f.submit %>
   <% end %>

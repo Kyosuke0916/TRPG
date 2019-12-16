@@ -1,3 +1,5 @@
+var pro_sum, ist_sum, buttle_pro_sum, search_pro_sum, act_pro_sum, neg_pro_sum, know_pro_sum, buttle_ist_sum, search_ist_sum, act_ist_sum, neg_ist_sum, know_ist_sum ;
+
 var obj= {
     str: ['str_tmp','str_inc',1],
     con: ['con_tmp','con_inc',2],
@@ -13,8 +15,8 @@ var obj= {
     idea: ['idea_tmp','idea_inc',12],
     luck: ['luck_tmp','luck_inc',13],
     know: ['know_tmp','know_inc',14],
-
     };
+
 Object.keys(obj).forEach(function(key) {
     var val = this[key]; // this は obj
     // console.log(key, val);
@@ -51,11 +53,16 @@ Object.keys(buttle).forEach(function(key) {
     for(let i = 0; i < val.length; i++) {
         let tmp = "#" + val[i]
         $(tmp).change(function(){
-            console.log(tmp)
-            console.log($(tmp))
-            console.log(val[2])
+           // console.log(tmp)
+           // console.log($(tmp))
+           // console.log(val[2])
             document.getElementById("buttle_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("buttle_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
             document.getElementById(val[3]).value = Number(document.getElementById("buttle_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById("pro_sum").innerHTML = Number(document.getElementById("avoid_pro").value) + Number(document.getElementById("kick_pro").value)
+       for(let n=0; n<11; n++) {
+           buttle_pro_sum = buttle_pro_sum + Number(document.getElementById(val[n]).value)
+           console.log(buttle_pro_sum)
+       }
         });
     }
 }, buttle);
@@ -86,6 +93,7 @@ Object.keys(search).forEach(function(key) {
             console.log($(tmp))
             console.log(val[2])
             document.getElementById("search_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("search_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById(val[3]).value = Number(document.getElementById("search_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
         });
     }
 }, search);
@@ -114,8 +122,8 @@ Object.keys(act).forEach(function(key) {
             console.log(tmp)
             console.log($(tmp))
             console.log(val[2])
-            skill_point = Number(document.getElementById("act_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
-            document.getElementById("act_table").rows[val[2]].cells[6].innerHTML = skill_point
+            document.getElementById("act_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("act_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById(val[3]).value = Number(document.getElementById("act_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
         });
     }
 }, act);
@@ -142,6 +150,7 @@ Object.keys(neg).forEach(function(key) {
             console.log($(tmp))
             console.log(val[2])
             document.getElementById("neg_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("neg_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById(val[3]).value = Number(document.getElementById("neg_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
         });
     }
 }, neg);
@@ -179,6 +188,7 @@ Object.keys(know).forEach(function(key) {
             console.log($(tmp))
             console.log(val[2])
             document.getElementById("know_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("know_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById(val[3]).value = Number(document.getElementById("know_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
         });
     }
 }, know);

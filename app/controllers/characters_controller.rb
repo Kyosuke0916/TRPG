@@ -21,13 +21,20 @@ class CharactersController < ApplicationController
   end
 
   def edit
-    @character=Character.all
+    @character=current_user.characters.find(params[:id])
   end
 
   def update
+    @character=current_user.characters.find(params[:id])
+    if @character.update_attributes(character_skill_params)
+      redirect_to characters_path
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @character=current_user.characters.find(params[:id])
   end
 
 
@@ -64,6 +71,6 @@ class CharactersController < ApplicationController
   end
 
   def character_skill_params
-    params.require(:character).permit(:str, :con, :pow, :dex, :app, :siz, :int, :edu,:avoid, :kick, :kumituki, :kobusi, :dutuki, :touteki, :masharu, :kenjyuu, :sabumasi, :shottogun, :masingun, :raihuru, :oukyuu, :kagi, :kakusu, :kakureru, :kikimimi, :sinobi, :shasin, :seisin, :tuiseki, :touhan, :toshokan, :mebosi, :unten, :shuri, :sousa, :jyouba, :suiei, :seisaku, :soujyuu, :tyouyaku, :denki, :nabi, :hensou, :iiku, :sinyou, :settoku, :negiri, :native, :first, :second, :igaku, :okaruto, :kagaku, :coc, :art, :keiri, :kouko, :comp, :sinri, :human, :seibutu, :tisitu, :densi, :tenmon, :hakubutu, :buturi, :houritu, :yakugaku, :rekisi)
+    params.require(:character).permit(:str, :con, :pow, :dex, :app, :siz, :int, :edu,:avoid, :kick, :kumituki, :kobusi, :dutuki, :touteki, :masharu, :kenjyuu, :sabumasi, :shottogun, :masingun, :raihuru, :oukyuu, :kagi, :kakusu, :kakureru, :kikimimi, :sinobi, :shasin, :seisin, :tuiseki, :touhan, :toshokan, :mebosi, :unten, :shuri, :sousa, :jyouba, :suiei, :seisaku, :soujyuu, :tyouyaku, :denki, :nabi, :hensou, :iiku, :sinyou, :settoku, :negiri, :native, :first, :second, :igaku, :okaruto, :kagaku, :coc, :art, :keiri, :kouko, :comp, :sinri, :human, :seibutu, :tisitu, :densi, :tenmon, :hakubutu, :buturi, :houritu, :yakugaku, :rekisi, :name)
   end
 end

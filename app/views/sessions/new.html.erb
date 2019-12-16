@@ -1,4 +1,4 @@
-<h1>ログインだよ</h1>
+<h1>ログイン</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= flash[:alert] %>
@@ -10,9 +10,9 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.submit "ログインするのぜ！！！", class: "btn btn-primary" %>
+      <%= f.submit "ログイン！！！", class: "btn btn-primary" %>
     <% end %>
 
-    <p>まだ作ってないのぜ？ <%= link_to "すぐつくってね!", "/users/new" %></p>
+    <p>まだ作ってない？ <%= link_to "すぐつくってね!", "/users/new" %></p>
   </div>
 </div>

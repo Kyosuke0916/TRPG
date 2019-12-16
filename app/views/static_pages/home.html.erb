@@ -2,14 +2,12 @@
 <div class="center jumbotron">
   <h1>クトゥルフ神話TRPG</h1>
 
-  <h2>
-    ゆっくりしていっちぇね！
-  </h2>
+
   <p>
     <% if  logged_in? %>
       <%= link_to "プロフィールにもどるよ！", "/users/show" %>
       <% else%>
-      <%= link_to "ユーザーの作成なのぜ！!", "/users/new", class: "btn btn-lg btn-primary" %>
+      <%= link_to "ユーザーの作成！!", "/users/new", class: "btn btn-lg btn-primary" %>
     <% end %>
   </p>
 </div>

@@ -1,2 +1,493 @@
-<h1>Characters#edit</h1>
-<p>Find me in app/views/characters/edit.html.erb</p>
+<body>
+<div class="col-md-9 col-md-offset-1">
+  <h2>基礎能力値</h2>
+    <table id="status_table" class="table table-striped table-bordered">
+      <tr>
+        <th></th><th>STR</th><th>CON</th><th>POW</th><th>DEX</th><th>APP</th><th>SIZ</th><th>INT</th>
+        <th>EDU</th><th>HP</th><th>MP</th><th>SAN</th><th>アイデア</th><th>幸運</th><th>知識</th>
+      </tr>
+      <tr>
+        <td>能力値</td>
+        <td id="str"><%= @character.str %></td>
+        <td id="con"><%= @character.con %></td>
+        <td id="pow"><%= @character.pow %></td>
+        <td id="dex"><%= @character.dex %></td>
+        <td id="app"><%= @character.app %></td>
+        <td id="siz"><%= @character.siz %></td>
+        <td id="int"><%= @character.int %></td>
+        <td id="edu"><%= @character.edu %></td>
+        <td id="hp"><%= ( @character.con + @character.siz ) /2 %></td>
+        <td id="mp"><%= @character.pow %></td>
+        <td id="san"><%= @character.pow * 5 %></td>
+        <td id="idea"><%= @character.int * 5 %></td>
+        <td id="luck"><%= @character.pow * 5 %></td>
+        <td id="know"><%= @character.edu * 5 %></td>
+      </tr>
+      <tr>
+        <td>その他増加分</td>
+        <td><input id="str_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="con_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="pow_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="dex_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="app_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="siz_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="int_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="edu_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="hp_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="mp_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="san_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="idea_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="luck_inc" type="number" max="99" class="status_input"></td>
+        <td><input id="know_inc" type="number" max="99" class="status_input"></td>
+      </tr>
+      <tr>
+        <td>一時増減</td>
+        <td><input id="str_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="con_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="pow_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="dex_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="app_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="siz_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="int_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="edu_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="hp_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="mp_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="san_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="idea_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="luck_tmp" type="number" max="99" class="status_input"></td>
+        <td><input id="know_tmp" type="number" max="99" class="status_input"></td>
+      </tr>
+      <tr>
+        <td>現在値</td>
+        <td id="str_sum"></td>
+        <td id="con_sum"></td>
+        <td id="pow_sum"></td>
+        <td id="dex_sum"></td>
+        <td id="app_sum"></td>
+        <td id="siz_sum"></td>
+        <td id="int_sum"></td>
+        <td id="edu_sum"></td>
+        <td id="hp_sum"></td>
+        <td id="mp_sum"></td>
+        <td id="san_sum"></td>
+        <td id="idea_sum"></td>
+        <td id="luck_sum"></td>
+        <td id="know_sum"></td>
+      </tr>
+    </table>
+
+  <br>
+  <label for="skill"><h2>戦闘技能</h2></label>
+<div class="skill_buttle">
+  <table id="buttle_table" class="table table-striped table-bordered">
+    <tr>
+      <th>技能名</th>
+      <th>技能値</th>
+      <th>成長</th>
+      <th>合計</th>
+
+
+    </tr>
+    <tr>
+      <th>回避</th>
+      <td><%= @character.avoid %></td>
+      <td><input id="avoid_grow" type="number" max="99"></td>
+      <td id="avoid_sum"></td>
+    </tr>
+    <tr>
+      <th>キック</th>
+      <td ><%= @character.kick %></td>
+      <td><input id="kick_grow" type="number" max="99"></td>
+      <td id="kick_sum"></td>
+    </tr>
+    <tr>
+      <th>組み付き</th>
+      <td ><%= @character.kumituki %></td>
+      <td><input id="kumituki_grow" type="number" max="99"></td>
+      <td id="kumituki_sum"></td>
+    </tr>
+    <tr>
+      <th>こぶし</th>
+      <td ><%= @character.kobusi %></td>
+      <td><input id="kobusi_grow" type="number" max="99"></td>
+      <td id="kobusi_sum"></td>
+    </tr>
+    <tr>
+      <th>頭突き</th>
+      <td ><%= @character.dutuki %></td>
+      <td><input id="dutuki_grow" type="number" max="99"></td>
+      <td id="dutuki_sum"></td>
+    </tr>
+    <tr>
+      <th>投擲</th>
+      <td ><%= @character.touteki %></td>
+      <td><input id="touteki_grow" type="number" max="99"></td>
+      <td id="touteki_sum"></td>
+    </tr>
+    <tr>
+      <th>マーシャルアーツ</th>
+      <td ><%= @character.masharu %></td>
+      <td><input id="masharu_grow" type="number" max="99"></td>
+      <td id="masharu_sum"></td>
+    </tr>
+    <tr>
+      <th>拳銃</th>
+      <td ><%= @character.kenjyuu %></td>
+      <td><input id="kenjyuu_grow" type="number" max="99"></td>
+      <td id="kenjyuu_sum"></td>
+    </tr>
+    <tr>
+      <th>サブマシンガン</th>
+      <td ><%= @character.sabumasi %></td>
+      <td><input id="sabumasi_grow" type="number" max="99"></td>
+      <td id="sabumasi_sum"></td>
+    </tr>
+    <tr>
+      <th>ショットガン</th>
+      <td ><%= @character.shottogun %></td>
+      <td><input id="shottogun_grow" type="number" max="99"></td>
+      <td id="shottogun_sum"></td>
+    </tr>
+    <tr>
+      <th>マシンガン</th>
+      <td ><%= @character.masingun %></td>
+      <td><input id="kick_grow" type="number" max="99"></td>
+      <td id="kick_sum"></td>
+    </tr>
+    <tr>
+      <th>ライフル</th>
+      <td ><%= @character.raihuru %></td>
+      <td><input id="raihuru_grow" type="number" max="99"></td>
+      <td id="raihuru_sum"></td>
+    </tr>
+  </table>
+</div>
+  <label for="skill"><h2>探索技能</h2></label>
+<div class="skill_buttle">
+  <table id="search_table" class="table table-striped table-bordered">
+    <tr>
+      <th>技能名</th>
+      <th>技能値</th>
+      <th>成長</th>
+      <th>合計</th>
+    </tr>
+    <tr>
+      <th>応急手当</th>
+      <td><%= @character.oukyuu %></td>
+      <td><input id="oukyuu_grow" type="number" max="99"></td>
+      <td id="oukyuu_sum"></td>
+    </tr>
+    <tr>
+      <th>鍵開け</th>
+      <td ><%= @character.kagi %></td>
+      <td><input id="kagi_grow" type="number" max="99"></td>
+      <td id="kagi_sum"></td>
+    </tr>
+    <tr>
+      <th>隠す</th>
+      <td ><%= @character.kakusu %></td>
+      <td><input id="kakusu_grow" type="number" max="99"></td>
+      <td id="kakusu_sum"></td>
+    </tr>
+    <tr>
+      <th>隠れる</th>
+      <td ><%= @character.kakureru %></td>
+      <td><input id="kakureru_grow" type="number" max="99"></td>
+      <td id="kakureru_sum"></td>
+    </tr>
+    <tr>
+      <th>聞き耳</th>
+      <td ><%= @character.kikimimi %></td>
+      <td><input id="kikimimi_grow" type="number" max="99"></td>
+      <td id="kikimimi_sum"></td>
+    </tr>
+    <tr>
+      <th>忍び歩き</th>
+      <td ><%= @character.sinobi %></td>
+      <td><input id="sinobi_grow" type="number" max="99"></td>
+      <td id="sinobi_sum"></td>
+    </tr>
+    <tr>
+      <th>写真術</th>
+      <td ><%= @character.shasin %></td>
+      <td><input id="shasin_grow" type="number" max="99"></td>
+      <td id="shasin_sum"></td>
+    </tr>
+    <tr>
+      <th>精神分析</th>
+      <td ><%= @character.seisin %></td>
+      <td><input id="seisin_grow" type="number" max="99"></td>
+      <td id="seisin_sum"></td>
+    </tr>
+    <tr>
+      <th>追跡</th>
+      <td ><%= @character.tuiseki %></td>
+      <td><input id="tuiseki_grow" type="number" max="99"></td>
+      <td id="tuiseki_sum"></td>
+    </tr>
+    <tr>
+      <th>登攀</th>
+      <td ><%= @character.touhan %></td>
+      <td><input id="touhan_grow" type="number" max="99"></td>
+      <td id="touhan_sum"></td>
+    </tr>
+    <tr>
+      <th>図書館</th>
+      <td ><%= @character.toshokan %></td>
+      <td><input id="toshokan_grow" type="number" max="99"></td>
+      <td id="toshokan_sum"></td>
+    </tr>
+    <tr>
+      <th>目星</th>
+      <td ><%= @character.mebosi %></td>
+      <td><input id="mebosi_grow" type="number" max="99"></td>
+      <td id="mebosi_sum"></td>
+    </tr>
+  </table>
+  <label for="skill"><h2>交渉技能</h2></label>
+  <div class="skill_buttle">
+    <table id="neg_table" class="table table-striped table-bordered">
+      <tr>
+        <th>技能名</th>
+        <th>技能値</th>
+        <th>成長</th>
+        <th>合計</th>
+      </tr>
+      <tr>
+        <th>言いくるめ</th>
+        <td><%= @character.iiku %></td>
+        <td><input id="iiku_grow" type="number" max="99"></td>
+        <td id="iiku_sum"></td>
+      </tr>
+      <tr>
+        <th>信用</th>
+        <td ><%= @character.sinyou %></td>
+        <td><input id="sinyou_grow" type="number" max="99"></td>
+        <td id="sinyou_sum"></td>
+      </tr>
+      <tr>
+        <th>説得</th>
+        <td ><%= @character.settoku %></td>
+        <td><input id="settoku_grow" type="number" max="99"></td>
+        <td id="settoku_sum"></td>
+      </tr>
+      <tr>
+        <th>値切り</th>
+        <td ><%= @character.negiri %></td>
+        <td><input id="negiri_grow" type="number" max="99"></td>
+        <td id="negiri_sum"></td>
+      </tr>
+      <tr>
+        <th>母国語</th>
+        <td ><%= @character.native %></td>
+        <td><input id="native_grow" type="number" max="99"></td>
+        <td id="native_sum"></td>
+      </tr>
+      <tr>
+
+    </table>
+  </div>
+  <label for="skill"><h2>知能技能</h2></label>
+  <div class="skill_buttle">
+    <table id="know_table" class="table table-striped table-bordered">
+      <tr>
+        <th>技能名</th>
+        <th>技能値</th>
+        <th>成長</th>
+        <th>合計</th>
+      </tr>
+      <tr>
+        <th>医学</th>
+        <td><%= @character.igaku %></td>
+        <td><input id="igaku_grow" type="number" max="99"></td>
+        <td id="igaku_sum"></td>
+      </tr>
+      <tr>
+        <th>オカルト</th>
+        <td ><%= @character.okaruto %></td>
+        <td><input id="okaruto_grow" type="number" max="99"></td>
+        <td id="okaruto_sum"></td>
+      </tr>
+      <tr>
+        <th>化学</th>
+        <td ><%= @character.kagaku %></td>
+        <td><input id="kagaku_grow" type="number" max="99"></td>
+        <td id="kagaku_sum"></td>
+      </tr>
+      <tr>
+        <th>クトゥルフ神話</th>
+        <td ><%= @character.coc %></td>
+        <td><input id="coc_grow" type="number" max="99"></td>
+        <td id="coc_sum"></td>
+      </tr>
+      <tr>
+        <th>芸術</th>
+        <td ><%= @character.art %></td>
+        <td><input id="art_grow" type="number" max="99"></td>
+        <td id="art_sum"></td>
+      </tr>
+      <tr>
+        <th>経理</th>
+        <td ><%= @character.keiri %></td>
+        <td><input id="keiri_grow" type="number" max="99"></td>
+        <td id="keiri_sum"></td>
+      </tr>
+      <tr>
+        <th>考古学</th>
+        <td ><%= @character.kouko %></td>
+        <td><input id="kouko_grow" type="number" max="99"></td>
+        <td id="kouko_sum"></td>
+      </tr>
+      <tr>
+        <th>コンピュータ</th>
+        <td ><%= @character.comp %></td>
+        <td><input id="comp_grow" type="number" max="99"></td>
+        <td id="comp_sum"></td>
+      </tr>
+      <tr>
+        <th>心理学</th>
+        <td ><%= @character.sinri %></td>
+        <td><input id="sinri_grow" type="number" max="99"></td>
+        <td id="sinri_sum"></td>
+      </tr>
+      <tr>
+        <th>人類学</th>
+        <td ><%= @character.human %></td>
+        <td><input id="human_grow" type="number" max="99"></td>
+        <td id="human_sum"></td>
+      </tr>
+      <tr>
+        <th>生物学</th>
+        <td ><%= @character.seibutu %></td>
+        <td><input id="seibutu_grow" type="number" max="99"></td>
+        <td id="seibutu_sum"></td>
+      </tr>
+      <tr>
+        <th>地質学</th>
+        <td ><%= @character.tisitu %></td>
+        <td><input id="tisitu_grow" type="number" max="99"></td>
+        <td id="tisitu_sum"></td>
+      </tr>
+      <tr>
+        <th>電子工学</th>
+        <td ><%= @character.densi %></td>
+        <td><input id="densi_grow" type="number" max="99"></td>
+        <td id="densi_sum"></td>
+      </tr>
+      <tr>
+        <th>天文学</th>
+        <td ><%= @character.tenmon %></td>
+        <td><input id="tenmon_grow" type="number" max="99"></td>
+        <td id="tenmon_sum"></td>
+      </tr>
+      <tr>
+        <th>博物学</th>
+        <td ><%= @character.hakubutu %></td>
+        <td><input id="hakubutu_grow" type="number" max="99"></td>
+        <td id="hakubutu_sum"></td>
+      </tr>
+      <tr>
+        <th>物理学</th>
+        <td ><%= @character.buturi %></td>
+        <td><input id="buturi_grow" type="number" max="99"></td>
+        <td id="buturi_sum"></td>
+      </tr>
+      <tr>
+        <th>法律</th>
+        <td ><%= @character.houritu %></td>
+        <td><input id="houritu_grow" type="number" max="99"></td>
+        <td id="houritu_sum"></td>
+      </tr>
+      <tr>
+        <th>薬学</th>
+        <td ><%= @character.yakugaku %></td>
+        <td><input id="yakugaku_grow" type="number" max="99"></td>
+        <td id="yakugaku_sum"></td>
+      </tr>
+      <tr>
+        <th>歴史</th>
+        <td ><%= @character.rekisi %></td>
+        <td><input id="rekisi_grow" type="number" max="99"></td>
+        <td id="rekisi_sum"></td>
+      </tr>
+    </table>
+  </div>
+  </div>
+  <h2>名前</h2>
+    <%= form_for @character , :url => {:controller => 'characters',:action => 'update'} do |f| %>
+      <%= f.text_field :name, placeholder: @character.name, class: 'form-control' %>
+      <%= f.hidden_field :str, :value => @character.str%>
+      <%= f.hidden_field :con, :value => @character.con%>
+      <%= f.hidden_field :pow, :value => @character.pow%>
+      <%= f.hidden_field :dex, :value =>  @character.dex%>
+      <%= f.hidden_field :app, :value =>  @character.app%>
+      <%= f.hidden_field :siz, :value =>  @character.siz%>
+      <%= f.hidden_field :int, :value =>  @character.int%>
+      <%= f.hidden_field :edu, :value =>  @character.edu%>
+      <%= f.hidden_field :avoid, :value => @character.dex*2 %>
+      <%= f.hidden_field :kick, :value => 25 %>
+      <%= f.hidden_field :kumituki, :value => 25 %>
+      <%= f.hidden_field :kobusi, :value => 50 %>
+      <%= f.hidden_field :dutuki, :value => 10 %>
+      <%= f.hidden_field :touteki, :value => 25 %>
+      <%= f.hidden_field :masharu, :value => 1 %>
+      <%= f.hidden_field :kenjyuu, :value => 20 %>
+      <%= f.hidden_field :sabumasi, :value => 15 %>
+      <%= f.hidden_field :shottogun, :value => 30 %>
+      <%= f.hidden_field :masingun, :value => 15 %>
+      <%= f.hidden_field :raihuru, :value => 25 %>
+      <%= f.hidden_field :oukyuu, :value => 30 %>
+      <%= f.hidden_field :kagi, :value => 1 %>
+      <%= f.hidden_field :kakusu, :value => 15 %>
+      <%= f.hidden_field :kakureru, :value => 10 %>
+      <%= f.hidden_field :sinobi, :value => 10 %>
+      <%= f.hidden_field :shasin, :value => 10 %>
+      <%= f.hidden_field :seisin, :value => 1 %>
+      <%= f.hidden_field :tuiseki, :value => 10 %>
+      <%= f.hidden_field :touhan, :value => 40 %>
+      <%= f.hidden_field :toshokan, :value => 25 %>
+      <%= f.hidden_field :kikimimi, :value => 25 %>
+      <%= f.hidden_field :mebosi, :value => 25 %>
+      <%= f.hidden_field :unten, :value => 20 %>
+      <%= f.hidden_field :shuri, :value => 20 %>
+      <%= f.hidden_field :sousa, :value => 1 %>
+      <%= f.hidden_field :jyouba, :value => 5 %>
+      <%= f.hidden_field :suiei, :value => 25 %>
+      <%= f.hidden_field :seisaku, :value => 5 %>
+      <%= f.hidden_field :soujyuu, :value => 1 %>
+      <%= f.hidden_field :tyouyaku, :value => 25 %>
+      <%= f.hidden_field :denki, :value => 10 %>
+      <%= f.hidden_field :nabi, :value => 10 %>
+      <%= f.hidden_field :hensou, :value => 1 %>
+      <%= f.hidden_field :iiku, :value => 5 %>
+      <%= f.hidden_field :sinyou, :value => 15 %>
+      <%= f.hidden_field :settoku , :value => 15 %>
+      <%= f.hidden_field :negiri, :value => 5 %>
+      <%= f.hidden_field :native, :value => @character.edu*5 %>
+      <%= f.hidden_field :first, :value => 1 %>
+      <%= f.hidden_field :second, :value => 1 %>
+      <%= f.hidden_field :igaku, :value => 5 %>
+      <%= f.hidden_field :okaruto, :value => 5 %>
+      <%= f.hidden_field :kagaku, :value => 1 %>
+      <%= f.hidden_field :coc, :value => 0 %>
+      <%= f.hidden_field :art, :value => 5 %>
+      <%= f.hidden_field :keiri, :value => 10 %>
+      <%= f.hidden_field :kouko, :value => 1 %>
+      <%= f.hidden_field :comp, :value => 1 %>
+      <%= f.hidden_field :sinri, :value => 5 %>
+      <%= f.hidden_field :human, :value => 1 %>
+      <%= f.hidden_field :seibutu, :value => 1 %>
+      <%= f.hidden_field :tisitu, :value => 1 %>
+      <%= f.hidden_field :densi, :value => 1 %>
+      <%= f.hidden_field :tenmon, :value => 1 %>
+      <%= f.hidden_field :hakubutu , :value => 10 %>
+      <%= f.hidden_field :buturi, :value => 1 %>
+      <%= f.hidden_field :houritu, :value => 5 %>
+      <%= f.hidden_field :yakugaku, :value => 1 %>
+      <%= f.hidden_field :rekisi, :value => 20 %>
+
+      <%= f.submit "更新する", class:'btn btn-primary btn-lg btn-block' %>
+    <% end %>
+</div>
+</body>
+    <%= javascript_include_tag 'skill_update.js' %>

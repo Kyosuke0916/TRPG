@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   get 'dices/home'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show, :edit, :update]
   get 'static_pages/home'
+  root 'static_pages#home'
   get 'static_pages/help'
   get 'static_pages/about'
   get 'characters/three'
