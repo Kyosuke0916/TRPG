@@ -1,6 +1,6 @@
 <div class="main">
   <div class="status">
-    <table id="status_table" border="1">
+    <table id="status_table" class="table table-striped table-bordered">
       <tr>
         <th width="100px"></th><th>STR</th><th>CON</th><th>POW</th><th>DEX</th><th>APP</th><th>SIZ</th><th>INT</th>
         <th>EDU</th><th>HP</th><th>MP</th><th>初期SAN</th><th>アイデア</th><th>幸運</th><th>知識</th>
@@ -77,28 +77,16 @@
   </div>
   <br>
 
-  <div class="san">
-    <table border="1">
-      <tr>
-        <th>現在SAN値</th>
-        <td>/99</td>
-        <td>(不定領域:)</td>
-      </tr>
-    </table>
-  </div>
-
-  <br>
-
   <div class="point">
-    <table border="1">
+    <table class="table table-striped table-bordered">
       <tr>
       <th>職業P</th>
-        <td>/<%= @character.edu * 20 %></td>
+        <td><%= @character.edu * 20 %></td>
         <td id="pro_sum"></td>
       </tr>
       <tr>
         <th>興味P</th>
-        <td>/<%= @character.int * 10 %></td>
+        <td><%= @character.int * 10 %></td>
         <td>(うち追加分:<input id="ist_sum" type="number" max="99">)</td>
       </tr>
     </table>
@@ -109,14 +97,12 @@
 
   <label for="skill">戦闘技能</label>
     <div class="skill_buttle">
-        <table id="buttle_table" border="1">
+        <table id="buttle_table" class="table table-striped table-bordered">
           <tr>
             <th>技能名</th>
             <th>初期値</th>
             <th>職業P</th>
             <th>興味P</th>
-            <th>成長分</th>
-            <th>その他</th>
             <th>合計</th>
           </tr>
           <tr>
@@ -124,8 +110,6 @@
             <td id="avoid"><%= @character.dex * 2 %></td>
             <td><input id="avoid_ist" type="number" max="99"></td>
             <td><input id="avoid_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="avoid_sum"></td>
           </tr>
           <tr>
@@ -133,8 +117,6 @@
             <td id="kick">25</td>
             <td><input id="kick_ist" type="number" max="99"></td>
             <td><input id="kick_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="kick_sum"></td>
           </tr>
           <tr>
@@ -142,8 +124,6 @@
             <td id="kumituki">25</td>
             <td><input id="kumituki_ist" type="number" max="99"></td>
             <td><input id="kumituki_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="kumituki_sum"></td>
           </tr>
           <tr>
@@ -151,8 +131,6 @@
             <td id="kobusi">50</td>
             <td><input id="kobusi_ist" type="number" max="99"></td>
             <td><input id="kobusi_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="kobusi_sum"></td>
           </tr>
           <tr>
@@ -160,8 +138,6 @@
             <td id="dutuki">10</td>
             <td><input id="dutuki_ist" type="number" max="99"></td>
             <td><input id="dutuki_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="dutuki_sum"></td>
           </tr>
           <tr>
@@ -169,8 +145,6 @@
             <td id="touteki">25</td>
             <td><input id="touteki_ist" type="number" max="99"></td>
             <td><input id="touteki_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="touteki_sum"></td>
           </tr>
           <tr>
@@ -178,8 +152,6 @@
             <td id="masharu">1</td>
             <td><input id="masharu_ist" type="number" max="99"></td>
             <td><input id="masharu_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="masharu_sum"></td>
           </tr>
           <tr>
@@ -187,8 +159,6 @@
             <td id="kenjyuu">20</td>
             <td><input id="kenjyuu_ist" type="number" max="99"></td>
             <td><input id="kenjyuu_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="kenjyuu_sum"></td>
           </tr>
           <tr>
@@ -196,8 +166,6 @@
             <td id="sabumasi">15</td>
             <td><input id="sabumasi_ist" type="number" max="99"></td>
             <td><input id="sabumasi_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="sabumasi_sum"></td>
           </tr>
           <tr>
@@ -205,8 +173,6 @@
             <td id="shottogun">30</td>
             <td><input id="shottogun_ist" type="number" max="99"></td>
             <td><input id="shottogun_pro" type="number" max="99"></td>
-            <td></td>
-            <td></td>
             <td id="shottogun_sum"></td>
           </tr>
           <tr>
@@ -214,8 +180,6 @@
             <td id="masingun">15</td>
             <td><input id="masingun_ist" type="number" max="99"></td>
             <td><input id="masingun_pro" type="number" max="99"></td>
-            <td></td>
-            <td></td>
             <td id="masingun_sum"></td>
           </tr>
           <tr>
@@ -223,8 +187,6 @@
             <td id="raihuru">25</td>
             <td><input id="raihuru_ist" type="number" max="99"></td>
             <td><input id="raihuru_pro" type="number" max="99"></td>
-            <td></td>
-            <td></td>
             <td id="raihuru_sum"></td>
           </tr>
         </table>
@@ -232,14 +194,12 @@
 
       <label for="skill">探索技能</label>
       <div class="skill_search">
-        <table id="search_table" border="1">
+        <table id="search_table" class="table table-striped table-bordered">
           <tr>
             <th>技能名</th>
             <th>初期値</th>
             <th>職業P</th>
             <th>興味P</th>
-            <th>成長分</th>
-            <th>その他</th>
             <th>合計</th>
           </tr>
           <tr>
@@ -247,8 +207,6 @@
             <td id="oukyuu">30</td>
             <td><input id="oukyuu_ist" type="number" max="99"></td>
             <td><input id="oukyuu_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="oukyuu_sum"></td>
           </tr>
           <tr>
@@ -256,8 +214,6 @@
             <td id="kagi">1</td>
             <td><input id="kagi_ist" type="number" max="99"></td>
             <td><input id="kagi_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="kagi_sum"></td>
           </tr>
           <tr>
@@ -265,8 +221,6 @@
             <td id="kakusu">15</td>
             <td><input id="kakusu_ist" type="number" max="99"></td>
             <td><input id="kakusu_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="kakusu_sum"></td>
           </tr>
           <tr>
@@ -274,8 +228,6 @@
             <td id="kakureru">10</td>
             <td><input id="kakureru_ist" type="number" max="99"></td>
             <td><input id="kakureru_pro"type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td></td>
           </tr>
           <tr>
@@ -283,8 +235,6 @@
             <td id="kikimimi">25</td>
             <td><input id="kikimimi_ist" type="number" max="99"></td>
             <td><input id="kikimimi_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="kikimimi_sum"></td>
           </tr>
           <tr>
@@ -292,8 +242,6 @@
             <td id="sinobi">10</td>
             <td><input id="sinobi_ist" type="number" max="99"></td>
             <td><input id="sinobi_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="sinobi_sum"></td>
           </tr>
           <tr>
@@ -301,8 +249,6 @@
             <td id="shasin">10</td>
             <td><input id="shasin_ist" type="number" max="99"></td>
             <td><input id="shasin_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="shasin_sum"></td>
           </tr>
           <tr>
@@ -310,8 +256,6 @@
             <td id="seisin">1</td>
             <td><input id="seisin_ist" type="number" max="99"></td>
             <td><input id="seisin_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="seisin_sum"></td>
           </tr>
           <tr>
@@ -319,8 +263,6 @@
             <td id="tuiseki">10</td>
             <td><input id="tuiseki_ist" type="number" max="99"></td>
             <td><input id="tuiseki_pro" type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
-            <td><input type="number" max="99"></td>
             <td id="tuiseki_sum"></td>
           </tr>
           <tr>
@@ -328,8 +270,6 @@
             <td id="touhan">40</td>
             <td><input id="touhan_ist" type="number" max="99"></td>
             <td><input id="touhan_pro" type="number" max="99"></td>
-            <td></td>
-            <td></td>
             <td id="touhan_sum"></td>
           </tr>
           <tr>
@@ -337,8 +277,6 @@
             <td id="toshokan">25</td>
             <td><input id="toshokan_ist" type="number" max="99"></td>
             <td><input id="toshokan_pro" type="number" max="99"></td>
-            <td></td>
-            <td></td>
             <td id="toshokan_sum"></td>
           </tr>
           <tr>
@@ -346,8 +284,6 @@
             <td id="mebosi">25</td>
             <td><input id="mebosi_ist" type="number" max="99"></td>
             <td><input id="mebosi_pro" type="number" max="99"></td>
-            <td></td>
-            <td></td>
             <td id="mebosi_sum"></td>
           </tr>
         </table>
@@ -355,14 +291,12 @@
 
         <label for="skill">行動技能</label>
         <div class="skill_act">
-          <table id="act_table" border="1">
+          <table id="act_table" class="table table-striped table-bordered">
             <tr>
               <th>技能名</th>
               <th>初期値</th>
               <th>職業P</th>
               <th>興味P</th>
-              <th>成長分</th>
-              <th>その他</th>
               <th>合計</th>
             </tr>
             <tr>
@@ -370,8 +304,6 @@
               <td id="unten">20</td>
               <td><input id="unten_ist" type="number" max="99"></td>
               <td><input id="unten_pro" type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
               <td id="unten_sum"></td>
             </tr>
             <tr>
@@ -379,8 +311,6 @@
               <td id="shuri">20</td>
               <td><input id="shuri_ist" type="number" max="99"></td>
               <td><input id="shuri_pro" type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
               <td id="shuri_sum"></td>
             </tr>
             <tr>
@@ -388,8 +318,6 @@
               <td id="sousa">1</td>
               <td><input id="sousa_ist" type="number" max="99"></td>
               <td><input id="sousa_pro" type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
               <td id="sousa_sum"></td>
             </tr>
             <tr>
@@ -397,8 +325,6 @@
               <td id="jyouba">5</td>
               <td><input id="jyouba_ist" type="number" max="99"></td>
               <td><input id="jyouba_pro" type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
               <td id="jyouba_sum"></td>
             </tr>
             <tr>
@@ -406,8 +332,6 @@
               <td id="suiei">25</td>
               <td><input id="suiei_ist" type="number" max="99"></td>
               <td><input id="suiei_pro" type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
               <td id="suiei_sum"></td>
             </tr>
             <tr>
@@ -415,8 +339,6 @@
               <td id="seisaku">5</td>
               <td><input id="seisaku_ist" type="number" max="99"></td>
               <td><input id="seisaku_pro" type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
               <td id="seisaku_sum"></td>
             </tr>
             <tr>
@@ -424,8 +346,6 @@
               <td id="soujyuu">1</td>
               <td><input id="soujyuu_ist" type="number" max="99"></td>
               <td><input id="soujyuu_pro" type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
               <td id="soujyuu_sum"></td>
             </tr>
             <tr>
@@ -433,8 +353,6 @@
               <td id="tyouyaku">25</td>
               <td><input id="tyouyaku_ist" type="number" max="99"></td>
               <td><input id="tyouyaku_pro" type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
               <td id="tyouyaku_sum"></td>
             </tr>
             <tr>
@@ -442,8 +360,6 @@
               <td id="denki">10</td>
               <td><input id="denki_ist" type="number" max="99"></td>
               <td><input id="denki_pro" type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
-              <td><input type="number" max="99"></td>
               <td id="denki_sum"></td>
             </tr>
             <tr>
@@ -451,8 +367,6 @@
               <td id="nabi">10</td>
               <td><input id="nabi_ist" type="number" max="99"></td>
               <td><input id="nabi_pro" type="number" max="99"></td>
-              <td></td>
-              <td></td>
               <td id="nabi_sum"></td>
             </tr>
             <tr>
@@ -460,8 +374,6 @@
               <td id="hensou">1</td>
               <td><input id="hensou_ist" type="number" max="99"></td>
               <td><input id="hensou_pro" type="number" max="99"></td>
-              <td></td>
-              <td></td>
               <td id="hensou_sum"></td>
             </tr>
           </table>
@@ -469,14 +381,12 @@
 
           <label for="skill">交渉技能</label>
           <div class="skill_neg">
-            <table id="neg_table" border="1">
+            <table id="neg_table" class="table table-striped table-bordered">
               <tr>
                 <th>技能名</th>
                 <th>初期値</th>
                 <th>職業P</th>
                 <th>興味P</th>
-                <th>成長分</th>
-                <th>その他</th>
                 <th>合計</th>
               </tr>
               <tr>
@@ -484,8 +394,6 @@
                 <td id="iiku">5</td>
                 <td><input id="iiku_ist" type="number" max="99"></td>
                 <td><input id="iiku_pro" type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
                 <td id="iiku_sum"></td>
               </tr>
               <tr>
@@ -493,8 +401,6 @@
                 <td id="sinyou">15</td>
                 <td><input id="sinyou_ist" type="number" max="99"></td>
                 <td><input id="sinyou_pro" type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
                 <td id="sinyou_sum"></td>
               </tr>
               <tr>
@@ -502,8 +408,6 @@
                 <td id="settoku">15</td>
                 <td><input id="settoku_ist" type="number" max="99"></td>
                 <td><input id="settoku_pro" type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
                 <td id="settoku_sum"></td>
               </tr>
               <tr>
@@ -511,8 +415,6 @@
                 <td id="negiri">5</td>
                 <td><input id="negiri_ist" type="number" max="99"></td>
                 <td><input id="negiri_pro" type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
                 <td id="negiri_sum"></td>
               </tr>
               <tr>
@@ -520,41 +422,20 @@
                 <td id="native">20</td>
                 <td><input id="native_ist" type="number" max="99"></td>
                 <td><input id="native_pro" type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
                 <td id="native_sum"></td>
               </tr>
-              <tr>
-                <th>　</th>
-                <td>1</td>
-                <td><input type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>　</th>
-                <td>1</td>
-                <td><input type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
-                <td><input type="number" max="99"></td>
-                <td></td>
-              </tr>
+
             </table>
           </div>
 
             <label for="skill">知識技能</label>
             <div class="skill_know">
-              <table id="know_table" border="1">
+              <table id="know_table" class="table table-striped table-bordered">
                 <tr>
                   <th>技能名</th>
                   <th>初期値</th>
                   <th>職業P</th>
                   <th>興味P</th>
-                  <th>成長分</th>
-                  <th>その他</th>
                   <th>合計</th>
                 </tr>
                 <tr>
@@ -562,8 +443,6 @@
                   <td id="igaku">5</td>
                   <td><input id="igaku_ist" type="number" max="99"></td>
                   <td><input id="igaku_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="igaku_sum"></td>
                 </tr>
                 <tr>
@@ -571,8 +450,6 @@
                   <td id="okaruto">5</td>
                   <td><input id="okaruto_ist" type="number" max="99"></td>
                   <td><input id="okaruto_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="okaruto_sum"></td>
                 </tr>
                 <tr>
@@ -580,8 +457,6 @@
                   <td id="kagaku">1</td>
                   <td><input id="kagaku_ist" type="number" max="99"></td>
                   <td><input is="kagaku_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="kagaku_sum"></td>
                 </tr>
                 <tr>
@@ -589,8 +464,6 @@
                   <td id="coc">0</td>
                   <td><input id="coc_ist" type="number" max="99"></td>
                   <td><input id="coc_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="coc_sum"></td>
                 </tr>
                 <tr>
@@ -598,8 +471,6 @@
                   <td id="art">5</td>
                   <td><input id="art_ist" type="number" max="99"></td>
                   <td><input id="art_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="art_sum"></td>
                 </tr>
                 <tr>
@@ -607,8 +478,6 @@
                   <td id="keiri">10</td>
                   <td><input id="keiri_ist" type="number" max="99"></td>
                   <td><input id="keiri_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="keiri_sum"></td>
                 </tr>
                 <tr>
@@ -616,8 +485,6 @@
                   <td id="kouko">1</td>
                   <td><input id="kouko_ist" type="number" max="99"></td>
                   <td><input id="kouko_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="kouko_sum"></td>
                 </tr>
                 <tr>
@@ -625,8 +492,6 @@
                   <td id="comp">1</td>
                   <td><input id="comp_ist" type="number" max="99"></td>
                   <td><input id="comp_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="comp_sum"></td>
                 </tr>
                 <tr>
@@ -634,8 +499,6 @@
                   <td id="sinri">5</td>
                   <td><input id="sinri_ist" type="number" max="99"></td>
                   <td><input id="sinri_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="sinri_sum"></td>
                 </tr>
                 <tr>
@@ -643,8 +506,6 @@
                   <td id="human">1</td>
                   <td><input id="human_ist" type="number" max="99"></td>
                   <td><input id="human_pro" type="number" max="99"></td>
-                  <td></td>
-                  <td></td>
                   <td id="human_sum"></td>
                 </tr>
                 <tr>
@@ -652,8 +513,6 @@
                   <td id="seibutu">1</td>
                   <td><input id="seibutu_ist" type="number" max="99"></td>
                   <td><input id="seibutu_pro" type="number" max="99"></td>
-                  <td></td>
-                  <td></td>
                   <td id="seibutu_sum"></td>
                 </tr>
                 <tr>
@@ -661,8 +520,6 @@
                   <td id="tisitu">1</td>
                   <td><input id="tisitu_ist" type="number" max="99"></td>
                   <td><input id="tisitu_pro" type="number" max="99"></td>
-                  <td></td>
-                  <td></td>
                   <td id="tisitu_sum"></td>
                 </tr>
                 <tr>
@@ -670,8 +527,6 @@
                   <td id="densi">1</td>
                   <td><input id="densi_ist" type="number" max="99"></td>
                   <td><input id="densi_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="densi_sum"></td>
                 </tr>
                 <tr>
@@ -679,8 +534,6 @@
                   <td id="tenmon">1</td>
                   <td><input id="tenmon_ist" type="number" max="99"></td>
                   <td><input id="tenmon_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="tenmon_sum"></td>
                 </tr>
                 <tr>
@@ -688,8 +541,6 @@
                   <td id="hakubutu">10</td>
                   <td><input id="hakubutu_ist" type="number" max="99"></td>
                   <td><input id="hakubutu_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="hakubutu_sum"></td>
                 </tr>
                 <tr>
@@ -697,8 +548,6 @@
                   <td id="buturi">1</td>
                   <td><input id="buturi_ist" type="number" max="99"></td>
                   <td><input id="buturi_pro" type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
-                  <td><input type="number" max="99"></td>
                   <td id="buturi_sum"></td>
                 </tr>
                 <tr>
@@ -706,8 +555,6 @@
                   <td id="houritu">5</td>
                   <td><input id="houritu_ist" type="number" max="99"></td>
                   <td><input id="houritu_pro" type="number" max="99"></td>
-                  <td></td>
-                  <td></td>
                   <td id="houritu_sum"></td>
                 </tr>
                 <tr>
@@ -715,8 +562,6 @@
                   <td id="yakugaku">1</td>
                   <td><input id="yakugaku_ist" type="number" max="99"></td>
                   <td><input id="yakugaku_pro" type="number" max="99"></td>
-                  <td></td>
-                  <td></td>
                   <td id="yakugaku_sum"></td>
                 </tr>
                 <tr>
@@ -724,15 +569,13 @@
                   <td id="rekisi">20</td>
                   <td><input id="rekisi_ist" type="number" max="99"></td>
                   <td><input id="rekisi_pro" type="number" max="99"></td>
-                  <td></td>
-                  <td></td>
                   <td id="rekisi_sum"></td>
                 </tr>
               </table>
     </div>
     <br>
   <%= form_for @character , :url => {:controller => 'characters',:action => 'create'} do |f| %>
-    <%= f.text_field :name, placeholder: 'nameを入力してください' %>
+    <%= f.text_field :name, placeholder: '名前を入力してください', class: 'form-control' %>
     <%= f.hidden_field :str, :value => @character.str%>
     <%= f.hidden_field :con, :value => @character.con%>
     <%= f.hidden_field :pow, :value => @character.pow%>
@@ -803,7 +646,7 @@
     <%= f.hidden_field :yakugaku, :value => 1 %>
     <%= f.hidden_field :rekisi, :value => 20 %>
 
-    <%= f.submit %>
+    <%= f.submit "保存する", class:'btn btn-primary btn-lg btn-block' %>
   <% end %>
   </div>
 <%= javascript_include_tag 'skill_change.js' %>

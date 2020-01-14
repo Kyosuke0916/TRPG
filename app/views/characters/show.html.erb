@@ -1,4 +1,4 @@
-<table border="1">
+<table class="table table-striped table-bordered">
   <h1>名前: <%= @character.name %></h1>
   <tr>
     <th width="100px"></th><th>STR</th><th>CON</th><th>POW</th><th>DEX</th><th>APP</th><th>SIZ</th><th>INT</th>
@@ -23,7 +23,7 @@
 </table>
 <label for="skill">戦闘技能</label>
 <div class="skill_buttle">
-  <table id="buttle_table" border="1">
+  <table id="buttle_table" class="table table-striped table-bordered">
     <tr>
       <th>技能名</th>
       <th>技能値</th>
@@ -80,7 +80,7 @@
 </div>
   <label for="skill">探索技能</label>
   <div class="skill_buttle">
-    <table id="buttle_table" border="1">
+    <table id="buttle_table" class="table table-striped table-bordered">
       <tr>
         <th>技能名</th>
         <th>技能値</th>
@@ -136,7 +136,7 @@
     </table>
     <label for="skill">交渉技能</label>
     <div class="skill_buttle">
-      <table id="buttle_table" border="1">
+      <table id="buttle_table" class="table table-striped table-bordered">
         <tr>
           <th>技能名</th>
           <th>技能値</th>
@@ -173,7 +173,7 @@
     </div>
       <label for="skill">知能技能</label>
       <div class="skill_buttle">
-        <table id="buttle_table" border="1">
+        <table id="buttle_table" class="table table-striped table-bordered">
           <tr>
             <th>技能名</th>
             <th>技能値</th>
@@ -257,6 +257,7 @@
         </table>
 
       </div>
-    <%= link_to "このキャラクターで遊ぶよ！", edit_character_path %>
-    <%= link_to "一覧にもどるよ！", characters_path %>
+  <%= button_to('このキャラクターで遊ぶよ！', edit_character_path, method: :get ,class: 'btn btn-primary btn-lg btn-block') %>
+    <br>
+    <%= button_to "一覧にもどるよ！",{controller: 'characters', action: 'index'},{method: :get, class: 'btn btn-primary btn-lg btn-block'}%>
   </div>

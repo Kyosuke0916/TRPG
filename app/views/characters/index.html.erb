@@ -1,5 +1,7 @@
 <h2>キャラクターの一覧だよ！</h2>
-<% @characters.each do |character| %>
-  <%= character.name %>: <%= link_to("キャラ詳細にいくよ！", character) %><br>
 
+<% @characters.each do |character| %>
+  <div class="col-md-6 panel panel-default">
+  <%= link_to(character.name, character) %><br>
+  </div>
 <% end %>

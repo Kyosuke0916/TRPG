@@ -1,8 +1,8 @@
 <div class="container">
-<button type="button" value="all_button" name="all_button" id="all_button", class= "btn btn-primary">
+<button type="button" value="all_button" name="all_button" id="all_button", class='btn btn-primary btn-lg btn-block'>
   一括で降る
 </button>
-<table>
+<table class="table table-striped table-bordered">
   <tr>
     <td>
       能力
@@ -102,7 +102,6 @@
   </tr>
   </tr>
 </table>
-</div>
 <%= form_for @character, :url=>{:action => 'skill_set'} do |f| %>
   <%= f.hidden_field :str %>
   <%= f.hidden_field :con %>
@@ -113,6 +112,7 @@
   <%= f.hidden_field :int %>
   <%= f.hidden_field :edu %>
 
-  <%= f.submit %>
+  <%= f.submit "キャラクターを作成する", class:'btn btn-primary btn-lg btn-block'%>
 <% end %>
+</div>
 <%= javascript_include_tag 'characters_three.js' %>

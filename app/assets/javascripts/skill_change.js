@@ -23,10 +23,9 @@ Object.keys(obj).forEach(function(key) {
     for(let i = 0; i < val.length; i++) {
         let tmp = "#" + val[i]
         $(tmp).change(function(){
-            console.log(tmp)
-            console.log($(tmp))
-            console.log(val[2])
-            document.getElementById("status_table").rows[4].cells[val[2]].innerHTML = Number(document.getElementById("status_table").rows[1].cells[val[2]].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById("status_table").rows[4].cells[val[2]].innerHTML =
+                Number(document.getElementById("status_table").rows[1].cells[val[2]].innerHTML) +
+                Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
         });
     }
 }, obj);
@@ -56,7 +55,7 @@ Object.keys(buttle).forEach(function(key) {
            // console.log(tmp)
            // console.log($(tmp))
            // console.log(val[2])
-            document.getElementById("buttle_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("buttle_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById("buttle_table").rows[val[2]].cells[4].innerHTML = Number(document.getElementById("buttle_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
             document.getElementById(val[3]).value = Number(document.getElementById("buttle_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
             document.getElementById("pro_sum").innerHTML = Number(document.getElementById("avoid_pro").value) + Number(document.getElementById("kick_pro").value)
        for(let n=0; n<11; n++) {
@@ -92,7 +91,7 @@ Object.keys(search).forEach(function(key) {
             console.log(tmp)
             console.log($(tmp))
             console.log(val[2])
-            document.getElementById("search_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("search_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById("search_table").rows[val[2]].cells[4].innerHTML = Number(document.getElementById("search_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
             document.getElementById(val[3]).value = Number(document.getElementById("search_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
         });
     }
@@ -122,7 +121,7 @@ Object.keys(act).forEach(function(key) {
             console.log(tmp)
             console.log($(tmp))
             console.log(val[2])
-            document.getElementById("act_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("act_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById("act_table").rows[val[2]].cells[4].innerHTML = Number(document.getElementById("act_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
             document.getElementById(val[3]).value = Number(document.getElementById("act_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
         });
     }
@@ -149,7 +148,7 @@ Object.keys(neg).forEach(function(key) {
             console.log(tmp)
             console.log($(tmp))
             console.log(val[2])
-            document.getElementById("neg_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("neg_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById("neg_table").rows[val[2]].cells[4].innerHTML = Number(document.getElementById("neg_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
             document.getElementById(val[3]).value = Number(document.getElementById("neg_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
         });
     }
@@ -187,7 +186,7 @@ Object.keys(know).forEach(function(key) {
             console.log(tmp)
             console.log($(tmp))
             console.log(val[2])
-            document.getElementById("know_table").rows[val[2]].cells[6].innerHTML = Number(document.getElementById("know_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
+            document.getElementById("know_table").rows[val[2]].cells[4].innerHTML = Number(document.getElementById("know_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
             document.getElementById(val[3]).value = Number(document.getElementById("know_table").rows[val[2]].cells[1].innerHTML) + Number(document.getElementById(val[1]).value) + Number(document.getElementById(val[0]).value)
         });
     }

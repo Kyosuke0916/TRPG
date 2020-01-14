@@ -1,22 +1,24 @@
-  <h1>新しいユーザーをつくるよ！</h1>
+<div class="col-md-6 col-md-offset-3">
+<h1 class="h1 mb-3 font-weight-normal">新しいユーザーをつくるよ！</h1>
 <%= form_for(@user) do |f| %>
   <p>
   <div class="field">
-    <%= f.label :name, "名前" %><br>
-    <%= f.text_field :name, placeholder: 'nameを入力してください' %>
+    <%= f.label :name, "名前",  class: 'control-label'%><br>
+    <%= f.text_field :name, placeholder: 'nameを入力してください', class: 'form-control' %>
   </div>
   <div class="field">
-    <%= f.label :email, "E-mail" %><br>
-    <%= f.text_field :email, placeholder: 'emailを入力してください' %>
+    <%= f.label :email, "E-mail",  class: 'control-label'%><br>
+    <%= f.text_field :email, placeholder: 'emailを入力してください', class: 'form-control' %>
   </div>
   <div class="field">
-    <%= f.label :password, "パスワード" %><br>
-    <%= f.password_field :password %>
+    <%= f.label :password, "パスワード",  class: 'control-label'%><br>
+    <%= f.password_field :password, class: 'form-control' %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation, "パスワード再入力" %><br>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :password_confirmation, "パスワード再入力", class: 'control-label'%><br>
+    <%= f.password_field :password_confirmation,class: 'form-control' %>
   </div>
   <br>
-  <%= f.submit %>
+  <%= f.submit "ユーザー作成", class:'btn btn-primary btn-lg btn-block' %>
 <% end %>
+</div>
